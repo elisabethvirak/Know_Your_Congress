@@ -1,6 +1,6 @@
 # Know Your Congress
 
-##Know your congressperson, Know your congress, Know the votes
+## Know your congressperson, Know your congress, Know the votes
 
 Elisabeth, Brooke, Tyler, and JackieOur team was interested in the congresspeople that represent each of us, and in helping Americans get to know their congressperson and who they are.
 We want to make this data exciting and easily accessible through an interactive dashboard.  We will use data from https://projects.propublica.org/api-docs/congress-api/
