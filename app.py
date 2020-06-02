@@ -23,7 +23,7 @@ def members():
     for member in members_data:
         member['_id'] = str(member['_id'])
         response.append(member)
-    return json.dumps(response)
+    return jsonify(response)
 
 #  return render_template("index.html", members_data=members_data)
 
