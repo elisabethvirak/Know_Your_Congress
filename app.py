@@ -11,12 +11,10 @@ client = pymongo.MongoClient(conn)
 
 @app.route("/")
 def index():
-    db = client.congress_db
-    members_data = db.members.find_one()
-    return render_template("index.html", members_data=members_data)
+    return "Hello, Congress"
 
 @app.route("/members")
-def members():
+def get_members():
     db = client.congress_db
     members_data = db.members.find()
     response = []
@@ -25,8 +23,15 @@ def members():
         response.append(member)
     return jsonify(response)
 
-#  return render_template("index.html", members_data=members_data)
-
+@app.route("/votes")
+def get_votes():
+    db = client.congress_db
+    votes_data = db.votes.find()
+    response = []
+    for vote in votes_data:
+        vote['_id'] = str(vote['_id'])
+        response.append(vote)
+    return jsonify(response)
 
 if __name__ == "__main__":
     app.run(debug=True)
