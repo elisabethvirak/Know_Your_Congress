@@ -1,6 +1,7 @@
 # import libraries
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 import pymongo
+import json
 
 app = Flask(__name__)
 
@@ -18,7 +19,13 @@ def index():
 def members():
     db = client.congress_db
     members_data = db.members.find()
-    return render_template("index.html", members_data=members_data)
+    response = []
+    for member in members_data:
+        member['_id'] = str(member['_id'])
+        response.append(member)
+    return json.dumps(response)
+
+#  return render_template("index.html", members_data=members_data)
 
 
 if __name__ == "__main__":
