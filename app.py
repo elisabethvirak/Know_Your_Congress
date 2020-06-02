@@ -17,7 +17,7 @@ def index():
 @app.route("/members")
 def members():
     db = client.congress_db
-    members_data = db.members.find_one()
+    members_data = db.members.find()
     return render_template("index.html", members_data=members_data)
 
 

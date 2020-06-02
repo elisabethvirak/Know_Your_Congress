@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
 </head>
 <body>
-        <p> {{ members_data }}</p>
+        <p> {% for member in members_data %}
+                {{member}}
+            {% endfor %}
+        </p>
   </body>
 </html>
