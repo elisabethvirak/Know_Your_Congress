@@ -2,7 +2,17 @@ body {
     background: white;
 }
     h1 {
-
+        font-family: arial;
+        font-size: 30px;
+        line-height: 45px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 70px;
+        background-image: url(https://unsplash.it/800);
+        background-size: cover;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
     }
     h2 {
 
