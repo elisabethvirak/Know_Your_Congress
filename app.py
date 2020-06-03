@@ -11,7 +11,8 @@ client = pymongo.MongoClient(conn)
 
 @app.route("/")
 def index():
-    return "Hello, Congress"
+    db = client.congress_db
+    return render_template('index.html', db=db)
 
 @app.route("/members")
 def get_members():
