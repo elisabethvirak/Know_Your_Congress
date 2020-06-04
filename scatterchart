@@ -63,7 +63,7 @@ function renderYAxis(newYScale, yAxis) {
     return yAxis;
 }
 
-//built circles for scatteer plot based on event listener values with a transition
+//built circles for scatter plot based on event listener values with a transition
 function renderPointsX(scatterPoints, newXScale, chosenX) {
     scatterPoints.transition()
         .duration(1000)
@@ -96,30 +96,30 @@ function updateToolTip(chosenX, chosenY, circleText) {
     var xLabel;
     var yLabel;
 
-    if (chosenX === "obesity") { //value for event listener
-        xLabel = "Obesity"; //value inside of tooltip
-        plotTitle1 = "Obesity Rate vs." //plot tile
+    if (chosenX === "votes_against_party") { //value for event listener
+        xLabel = "%Votes Against Party"; //value inside of tooltip
+        plotTitle1 = "%Votes Against Party vs." //plot tile
     }
-    else if (chosenX === "healthcare") {
-        xLabel = "Has Healthcare";
-        plotTitle1 = "Healthcare Coverage vs.";
+    else if (chosenX === "missedVotes") {
+        xLabel = "% Missed Votes";
+        plotTitle1 = "% Missed Votes vs.";
     }
     else {
-        xLabel = "Smokes"
-        plotTitle1 = "Smoking Rate vs."
+        xLabel = "Office Spending"
+        plotTitle1 = "Office Spending vs."
     }
 
-    if (chosenY === "poverty") { 
-        yLabel = "Poverty (%)";
-        plotTitle2 = "Poverty Rate";
+    if (chosenY === "Seniority") { 
+        yLabel = "Seniority (years?)";
+        plotTitle2 = "Seniority";
     }
-    else if (chosenY === "income") {
-        yLabel = "Income";
-        plotTitle2 = "Income";
+    else if (chosenY === "officeTotals") {
+        yLabel = "Office Expenditure";
+        plotTitle2 = "Office Expenditure";
     }
     else {
-        yLabel = "Age";
-        plotTitle2 = "Median Age"
+        yLabel = "$ Spent on Private Travel";
+        plotTitle2 = "Private Travel Expenditure"
     }
 
     d3.selectAll(".plotTitle")
@@ -145,10 +145,10 @@ function updateToolTip(chosenX, chosenY, circleText) {
     return circleText;
 }
 
-d3.csv("assets/data/data.csv").then(function (censusData) {
-    console.log(censusData)
+d3.json("/members").then(function (memberData) {
+    console.log(memberData)
     //transform data types
-    censusData.forEach(function (d) {
+    memberData.forEach(function (d) {
         d.poverty = +d.poverty
         d.obesity = +d.obesity
         d.age = +d.age
