@@ -38,4 +38,25 @@ def build_mongo_db ():
     # create members collection with response
     db.members.insert_many(congress_members)
 
-# build_mongo_db()
+    #make list of member ids
+    member_ids = []
+    for mem in congress_members:
+        member_ids.append(mem["id"])
+    
+    #use list to update expenses query URL
+    expenses = []
+    for mem_id in member_ids:
+        try:
+            expense_url = f"https://api.propublica.org/congress/v1/members/{mem_id}/office_expenses/category/total.json"
+            expense_r = requests.get(expense_url, headers={"X-API-Key": key})
+            expense_json = expense_r.json()
+            expenses.append(expense_json)
+        except:
+            print ("error")
+    
+    # drop members colletion
+    db.office_totals.drop()
+    # create members collection with response
+    db.office_totals.insert_many(expenses)
+
+build_mongo_db()
