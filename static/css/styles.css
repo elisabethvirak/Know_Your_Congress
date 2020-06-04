@@ -2,12 +2,12 @@ body {
     background: white;
 }
     h1 {
-        font-family: arial;
-        font-size: 30px;
-        line-height: 45px;
+        font-family: 'IM Fell English';
+        font-size: 80px;
+        line-height: 95px;
         text-transform: uppercase;
         text-align: center;
-        padding: 70px;
+        padding: 15px;
         background-image: url(https://unsplash.it/800);
         background-size: cover;
         background-clip: text;
@@ -15,7 +15,17 @@ body {
         color: transparent;
     }
     h2 {
-
+        font-family: 'Teko', sans-serif;
+        font-size: 50px;
+        line-height: 65px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 15px;
+        background-image: url(https://unsplash.it/800);
+        background-size: cover;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
     }
     h3 {
 
@@ -38,4 +48,5 @@ body {
         margin: 15px;
         background: royalblue;
         color: white;
+        border-radius: 35px;
       }
