@@ -41,5 +41,15 @@ def get_votes():
         response.append(vote)
     return jsonify(response)
 
+@app.route("/office_totals")
+def get_expenses():
+    db = client.congress_db
+    expenses_data = db.office_totals.find()
+    response = []
+    for totals in expenses_data:
+        totals['_id'] = str(totals['_id'])
+        response.append(totals)
+    return jsonify(response)
+
 if __name__ == "__main__":
     app.run(debug=True)

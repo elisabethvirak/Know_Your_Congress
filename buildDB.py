@@ -59,4 +59,4 @@ def build_mongo_db ():
     # create members collection with response
     db.office_totals.insert_many(expenses)
 
-build_mongo_db()
+#build_mongo_db()
