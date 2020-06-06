@@ -1,5 +1,6 @@
 body {
     background: white;
+    font-family: arial;
 }
     h1 {
         font-family: 'IM Fell English';
@@ -44,9 +45,23 @@ body {
         max-height: 100%;
     }
     .box {
-        padding: 30px;
         margin: 15px;
+        border-radius: 15px;
+        padding: 30px;
         background: royalblue;
         color: white;
-        border-radius: 35px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 50px;
       }
+    .card-title {
+        padding: 10px;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    #rep-info {
+        color: royalblue;
+        background: white;
+        border: gold;
+        border-radius: 5px;
+    }
