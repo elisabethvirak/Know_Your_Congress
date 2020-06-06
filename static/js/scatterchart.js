@@ -110,7 +110,7 @@ function updateToolTip(chosenX, chosenY, circleText) {
         plotTitle1 = "Office Spending vs."
     }
 
-    if (chosenY === "Seniority") {
+    if (chosenY === "seniority") {
         yLabel = "Seniority (years?)";
         plotTitle2 = "Seniority";
     }
