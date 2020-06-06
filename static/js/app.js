@@ -8,6 +8,8 @@
             // console.log(i);
             // console.log(i.short_title);
 
+            // create repNamesList to push names to
+            repNameList = []
             // save short title, first and last names to concatenate
             var shortTitle = i.short_title;
             // console.log(shortTitle);
@@ -16,45 +18,22 @@
             var lastName = i.last_name;
             // console.log(lastName);
 
+            // create string of representatives' entire name
             var repName = shortTitle + ` ` + firstName + ` ` + lastName;
-            // console.log(repName);
-
-            // convert repName array to an object
-            const convertArrayToObject = (array, key) => {
-                const initialValue = {};
-                return array.reduce((obj, item) => {
-                  return {
-                    ...obj,
-                    [item[key]]: item,
-                  };
-                }, initialValue);
-              };
-            console.log(convertArrayToObject(repName, 'id')); 
-            // repNameObj = JSON.parse(repNameJSON);
-            // console.log(repNameObj); 
+            // add to repNameList to iterate through later
+            repNameList.push(repName)
+            console.log(repNameList);
 
             // select dropdown menu
-            // var dropdownMenu = d3.select('#congressPerson');
-            // //iterate through representative names list to add choices to the dropdown menu
-            // repName.forEach(i => {
-            //     // console.log(i);
-            //     var menuOption = dropdownMenu.append('option');
-            //     menuOption.text(i).property('value');
-            // });
-        // buildPlot(subjectIDs[0]);
+            var dropdownMenu = d3.select('#congressPerson');
+            //iterate through representative names list to add choices to the dropdown menu
+            repNameList.forEach(name => {
+                // console.log(i);
+                var menuOption = dropdownMenu.append('option');
+                // menuOption.attr('value', name);
+                menuOption.text(name);
+            });
         })
-        // save subject ids as variable
-
-        
-        // // select dropdown menu
-        // var dropdownMenu = d3.select('#congressPerson');
-        // //iterate through subject id list to add choices to the dropdown menu
-        // subjectIDs.forEach(i => {
-        //     // console.log(i);
-        //     var menuOption = dropdownMenu.append('option');
-        //     menuOption.text(i).property('value');
-        // });    
-
     })
 // }
 // init();
