@@ -55,7 +55,7 @@ body {
         line-height: 50px;
       }
     .card-title {
-        padding: 10px;
+        /* padding: 10px; */
         font-weight: bold;
         font-size: 22px;
     }
