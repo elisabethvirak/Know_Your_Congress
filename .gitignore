@@ -1,3 +1,8 @@
 config.py
 .ipynb_checkpoints
+<<<<<<< HEAD
 __pycache__
+=======
+__pycache__
+.DS_Store
+>>>>>>> 8211828f9839cdb4d7ccf44ae163e171bbf4f640
