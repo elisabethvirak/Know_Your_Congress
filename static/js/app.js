@@ -23,17 +23,17 @@
             // create string of representatives' entire name
             var repName = shortTitle + ` ` + firstName + ` ` + lastName;
             // add to repNameList to iterate through later
-            repNameList.push(repID, repName)
-            console.log(repNameList);
+            repNameList.push([repID, repName])
+            // console.log(repNameList);
 
             // select dropdown menu
             var dropdownMenu = d3.select('#congressPerson');
             //iterate through representative names list to add choices to the dropdown menu
             repNameList.forEach(name => {
-                // console.log(name);
+                // console.log(name[1]);
                 var menuOption = dropdownMenu.append('option');
                 menuOption.attr('value', name);
-                menuOption.text(name);
+                menuOption.text(name[1]);
             });
         })
     })
