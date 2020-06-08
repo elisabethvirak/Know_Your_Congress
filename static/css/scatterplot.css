@@ -1,0 +1,81 @@
+.iframeContainer {
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+  }
+  
+  /* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    /* Padding bottom by footer height */
+    padding-bottom: 80px;
+  }
+
+
+  .scatterpoint-text {
+    font-size: small;
+  }
+
+  .tooltip {
+    position: absolute;
+    width: 145px;
+    height: 50px;
+    padding: 10px;
+    font: 10px sans-serif;
+    text-align: center;
+    color: white;
+    background: black;
+    border: 0;
+    border-radius: 10px;
+    opacity: 0.5;
+  }
+
+  .active-axis {
+    font-weight: bold;
+    fill:black;
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+    font-size: 18px
+  }
+  
+  .inactive-axis {
+    font-weight: lighter;
+    fill:grey;
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+  }
+  
+  .inactive-axis:hover {
+    fill: black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #page-title {
+    border-bottom: 1px solid black;
+    font-family: Cambria;
+  }
+
+  .article {
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right:25px;
+  }
+
+  .plotTitle {
+    text-align: center;
+    font-size: 20px;
+    margin-left: 40px;
+    font-weight: bold;
+    padding-top: 30px
+  }
+
+  #articleTitle {
+    padding-top: 30px;
+    font-style: italic;
+  }
+

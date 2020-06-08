@@ -255,6 +255,7 @@ d3.json("/members").then(function (memberData) {
         labelsGroupX.selectAll("text")
             .on("click", function () {
                 var value = d3.select(this).attr("value");
+                console.log("LOOK HERE", value);
                 if (value !== chosenX) {
 
                     chosenX = value;
