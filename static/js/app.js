@@ -63,13 +63,33 @@
             // console.log(office);
             var phoneNumber = `Phone Number: ` + i.phone;
             // console.log(phoneNumber);
-            var url = `Website: ` + i.url;
+            if (i.url) {
+                var url = `Website: ` + i.url;
+            }
+            else {
+                url = `Website: Not Reported`;
+            }
             // console.log(url);
-            var facebookAccount = `Facebook: https://facebook.com/` + i.facebook_account;
+            if (i.facebook_account) {
+                var facebookAccount = `Facebook: https://facebook.com/` + i.facebook_account;
+            }
+            else {
+                facebookAccount = `Facebook: Not Reported`;
+            }
             // console.log(facebookAccount);
-            var twitter = `Twitter: https://twitter.com/` + i.twitter_account;
-            // console.log(twitter);
-            var youTube = `YouTube: https://youtube.com/` + i.youtube_account;
+            if (i.twitter_account) {
+                var twitter = `Twitter: https://twitter.com/` + i.twitter_account;
+            }
+            else {
+                twitter = `Twitter: Not Reported`;
+            }
+            console.log(twitter);
+            if (i.youtube_account) {
+                var youTube = `https://youtube.com/` + i.youtube_account;
+            }
+            else {
+                youTube = `YouTube: Not Reported`;
+            }
             // console.log(youTube);
 
             // create repDataList
