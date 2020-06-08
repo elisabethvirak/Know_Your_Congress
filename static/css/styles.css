@@ -44,6 +44,14 @@ body {
         max-width: 100%;
         max-height: 100%;
     }
+    th {
+        font-weight: bold;
+        border: gold;
+
+    }
+    tr {
+        font-size: 14px;
+    }
     .box {
         margin: 15px;
         border-radius: 15px;
@@ -58,6 +66,12 @@ body {
         /* padding: 10px; */
         font-weight: bold;
         font-size: 22px;
+    }
+    .row-header {
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        background: royalblue;
     }
     #rep-info {
         color: royalblue;
