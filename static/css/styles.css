@@ -35,10 +35,10 @@ body {
 
     }
     a {
-
+        font-size: 14px;
     }
     a:hover {
-
+        font-size: 14px;
     }
     img {
         max-width: 100%;

@@ -64,26 +64,26 @@
             var phoneNumber = `Phone Number: ` + i.phone;
             // console.log(phoneNumber);
             if (i.url) {
-                var url = `Website: ` + i.url;
+                var url = i.url;
             }
             else {
                 url = `Website: Not Reported`;
             }
             // console.log(url);
             if (i.facebook_account) {
-                var facebookAccount = `Facebook: https://facebook.com/` + i.facebook_account;
+                var facebookAccount = `https://facebook.com/` + i.facebook_account;
             }
             else {
                 facebookAccount = `Facebook: Not Reported`;
             }
             // console.log(facebookAccount);
             if (i.twitter_account) {
-                var twitter = `Twitter: https://twitter.com/` + i.twitter_account;
+                var twitter = `https://twitter.com/` + i.twitter_account;
             }
             else {
                 twitter = `Twitter: Not Reported`;
             }
-            console.log(twitter);
+            // console.log(twitter);
             if (i.youtube_account) {
                 var youTube = `https://youtube.com/` + i.youtube_account;
             }
@@ -114,7 +114,7 @@
                 twitter,
                 youTube
             ]);
-            console.log(repDataList);
+            // console.log(repDataList);
 
             // select dropdown menu
             var dropdownMenu = d3.select('#congressPerson');
@@ -130,6 +130,8 @@
             repCard.html("")
             Object.entries(repDataList).forEach(([key,value]) => {
                 repCard.append('th').text(`${value[1]}`);
+
+                // add general information
                 repCard.append('tr')
                     .append('th').text(`General:`);
                 repCard.append('tr').text(`${value[2]}`)
@@ -140,6 +142,8 @@
                 .append('tr')
                     .append('td').text(`${value[6]}`)
                     .append('td').text(`${value[7]}`);
+
+                // add voting history
                 repCard.append('tr')
                     .append('th').text(`Voting History:`);
                 repCard.append('tr')
@@ -148,14 +152,40 @@
                 .append('tr')
                     .append('td').text(`${value[11]}`)
                     .append('td').text(`${value[12]}`);
+
+                // add contact information
                 repCard.append('tr')
                     .append('th').text(`Contact:`);
                 repCard.append('tr').text(`${value[13]}`)
-                .append('tr').text(`${value[14]}`)
-                .append('tr').text(`${value[15]}`)
-                .append('tr').text(`${value[16]}`)
-                .append('tr').text(`${value[17]}`)
-                .append('tr').text(`${value[18]}`);
+                .append('tr').text(`${value[14]}`);
+                if (value[15] !== 'Website: Not Reported') {
+                    repCard.append('tr').text(`YouTube: `)
+                        .append('a').attr('href',`${value[15]}`).text(`${value[15]}`);
+                }
+                else {
+                    repCard.append('tr').text(`${value[15]}`)
+                };
+                if (facebookAccount !== 'Facebook: Not Reported') {
+                    repCard.append('tr').text(`Facebook: `)
+                        .append('a').attr('href',`${value[16]}`).text(`${value[16]}`);
+                }
+                else {
+                    repCard.append('tr').text(`${value[16]}`)
+                };
+                if (value[17] !== 'Twitter: Not Reported') {
+                    repCard.append('tr').text(`Twitter: `)
+                        .append('a').attr('href',`${value[17]}`).text(`${value[17]}`);
+                }
+                else {
+                    repCard.append('tr').text(`${value[17]}`)
+                };
+                if (value[18] !== 'YouTube: Not Reported') {
+                    repCard.append('tr').text(`YouTube: `)
+                        .append('a').attr('href',`${value[18]}`).text(`${value[18]}`);
+                }
+                else {
+                    repCard.append('tr').text(`${value[18]}`)
+                };
             });
         })
     })
