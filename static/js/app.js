@@ -137,15 +137,6 @@
                 .append('tr').text(`${value[17]}`)
                 .append('tr').text(`${value[18]}`);
             });
-            // function buildRepCard(representative) {
-            //     repCard.html("")
-            //     // panel box with representative's info
-            //     Object.entries(repDataList).forEach(([key,value]) => {
-            //         repCard.append('th').text(`${key}`)
-            //         .append('tr').text(`${value}`);
-            //     });
-            // }
-            // buildRepCard();
         })
     })
 // }

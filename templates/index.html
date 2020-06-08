@@ -33,29 +33,31 @@
                 </div>
             </div>
             <div class = 'row'>
-                <div class = 'col-md-12'>
-                    <div class = 'row'>
-                        <div class = 'col-md-12' id = 'diverging-chart'>
-                            <h1>insert diverging bar chart here</h1>
-                        </div>
-                    </div>
-                    <div class='row'>
-                        <div class='col-md-12'>
-                            <div id='scatter'>
-                                <h1>insert scatter plot here</h1>
-                            </div>
-                        </div>
+                <div class = 'col-md-6' id = 'diverging-chart'>
+                    <h1>insert diverging bar chart here</h1>
+                </div>
+                <div class='col-md-6'>
+                    <div id='scatter'>
+                        <h1>insert scatter plot here</h1>
                     </div>
                 </div>
             </div>
             <div class = 'row'>
                 <div class = 'col-md-12'>
                     <div class = 'box'>
-                        <h4>Find Your Congressperson<select id="congressPerson" onchange="optionChanged(this.value)"></select></h4>
+                        <h4>Find Your Congressperson</h4>
+                        <select id="congressPerson" onchange="optionChanged(this.value)"></select>
                         <div class="card-header">
                             <h4 class="card-title">About Your Representative</h4>
                         </div>
-                        <div id="rep-info" class="card-body">hello</div>
+                        <div class="card-body">
+                            <div class = 'container'>
+                                <div class = 'row'>
+                                    <div class = 'col-md-6' id = 'rep-pic'></div>
+                                    <div class = 'col-md-6' id='rep-info'></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
