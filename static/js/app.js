@@ -23,81 +23,76 @@
             var repID = i.id;
             // console.log(repID);
 
-            //info for repDataList
-            // general
-            var birthDate = i.date_of_birth;
-            // console.log(birthDate);
-            var party = i.party;
-            // console.log(party);
-            var state = i.state;
-            // console.log(state);
-            var district = i.district;
-            // console.log(district);
-            var seniority = i.seniority;
-            // console.log(seniority);
-            var nextElection = i.next_election;
-            // console.log(nextElection);
-
-            // votes
-            var totalVotes = i.total_votes;
-            // console.log(totalVotes);
-            var missedVotes = i.missed_votes;
-            // console.log(missedVotes);
-            var missedVotesPCT = i.missed_votes_pct + `%`;
-            // console.log(missedVotesPCT);
-            var votesWith = i.votes_with_party_pct + `%`;
-            // console.log(votesWith);
-            var votesAgainst = i.votes_against_party_pct + `%`;
-            // console.log(votesAgainst);
-
-            // contact
-            var office = i.office;
-            // console.log(office);
-            var phoneNumber = i.phone;
-            // console.log(phoneNumber);
-            var url = i.url;
-            // console.log(url);
-            var facebookAccount = `https://facebook.com/` + i.facebook_account;
-            // console.log(facebookAccount);
-            var twitter = `https://twitter.com/` + i.twitter_account;
-            // console.log(twitter);
-            var youTube = `https://youtube.com/` + i.youtube_account;
-            // console.log(youTube);
-
             // create string of representatives' entire name
             var repName = shortTitle + ` ` + firstName + ` ` + lastName;
             // add to repNameList to iterate through later
             repNameList.push([repID, repName])
             // console.log(repNameList);
 
+            //info for repDataList
+            // general
+            var repTableName = `Representative: ` + firstName + ` ` + lastName;
+            // console.log(repTableName);
+            var birthDate = `Date of Birth: ` + i.date_of_birth;
+            // console.log(birthDate);
+            var party = `Party: ` + i.party;
+            // console.log(party);
+            var state = `State: ` + i.state;
+            // console.log(state);
+            var district = `District: ` + i.district;
+            // console.log(district);
+            var seniority = `Seniority: ` + i.seniority;
+            // console.log(seniority);
+            var nextElection = `Next Election Year: ` + i.next_election;
+            // console.log(nextElection);
+
+            // votes
+            var totalVotes = `Total Votes: ` + i.total_votes;
+            // console.log(totalVotes);
+            var missedVotes = `Missed Votes: ` + i.missed_votes;
+            // console.log(missedVotes);
+            var missedVotesPCT = `Percentage of Missed Votes: ` + i.missed_votes_pct + `%`;
+            // console.log(missedVotesPCT);
+            var votesWith = `Votes With Party: ` + i.votes_with_party_pct + `%`;
+            // console.log(votesWith);
+            var votesAgainst = `Votes Against Party: ` + i.votes_against_party_pct + `%`;
+            // console.log(votesAgainst);
+
+            // contact
+            var office = `Office: ` + i.office;
+            // console.log(office);
+            var phoneNumber = `Phone Number: ` + i.phone;
+            // console.log(phoneNumber);
+            var url = `Website: ` + i.url;
+            // console.log(url);
+            var facebookAccount = `Facebook: https://facebook.com/` + i.facebook_account;
+            // console.log(facebookAccount);
+            var twitter = `Twitter: https://twitter.com/` + i.twitter_account;
+            // console.log(twitter);
+            var youTube = `YouTube: https://youtube.com/` + i.youtube_account;
+            // console.log(youTube);
+
             // create repDataList
             repDataList.push([
-                // ['About',[
-                        ['Date of Birth',birthDate],
-                        ['Party',party],
-                        ['State',state],
-                        ['District',district],
-                        ['Seniority',seniority],
-                        ['Next Election', nextElection]
-                //     ]
-                // ],
-                // ['Voting History',[
-                        ['Total Votes',totalVotes],
-                        ['Missed Votes',missedVotes],
-                        ['Percentage of Missed Votes',missedVotesPCT],
-                        ['Votes With Party',votesWith],
-                        ['Votes Against Party',votesAgainst]
-                //     ]
-                // ],
-                // ['Contact Information',[
-                        ['Office',office],
-                        ['Phone Number',phoneNumber],
-                        ['Website',url],
-                        ['Facebook',facebookAccount],
-                        ['Twitter',twitter],
-                        ['YouTube',youTube]
-                //     ]
-                // ]
+                repID,
+                repTableName,
+                birthDate,
+                party,
+                state,
+                district,
+                seniority,
+                nextElection,
+                totalVotes,
+                missedVotes,
+                missedVotesPCT,
+                votesWith,
+                votesAgainst,
+                office,
+                phoneNumber,
+                url,
+                facebookAccount,
+                twitter,
+                youTube
             ]);
             console.log(repDataList);
 
@@ -111,7 +106,20 @@
                 menuOption.text(name[1]);
             });
 
-            // var repCard = d3.select('#rep-info');
+            var repCard = d3.select('#rep-info');
+            repCard.html("")
+            Object.entries(repDataList).forEach(([key,value]) => {
+                repCard.append('th').text(`${value[1]}`)
+                .append('p').text(`${value[2]}`)
+                .append('p').text(`${value[3]}`)
+                .append('p').text(`${value[4]}`)
+                .append('p').text(`${value[5]}`)
+                .append('p').text(`${value[6]}`)
+                .append('p').text(`${value[7]}`)
+                .append('p').text(`${value[8]}`)
+                .append('p').text(`${value[9]}`)
+                .append('p').text(`${value[10]}`);
+            });
             // function buildRepCard(representative) {
             //     repCard.html("")
             //     // panel box with representative's info
