@@ -109,25 +109,28 @@
             var repCard = d3.select('#rep-info');
             repCard.html("")
             Object.entries(repDataList).forEach(([key,value]) => {
-                repCard.append('th').text(`${value[1]}`)
-                .append('tr').classed('row-header').text(`General:`)
-                .append('tr').text(`${value[2]}`)
+                repCard.append('th').text(`${value[1]}`);
+                repCard.append('tr')
+                    .append('th').text(`General:`);
+                repCard.append('tr').text(`${value[2]}`)
                 .append('tr')
                     .append('td').text(`${value[3]}`)
                     .append('td').text(`${value[4]}`)
                     .append('td').text(`${value[5]}`)
                 .append('tr')
                     .append('td').text(`${value[6]}`)
-                    .append('td').text(`${value[7]}`)
-                .append('tr').text(`Voting History:`)
-                .append('tr')
+                    .append('td').text(`${value[7]}`);
+                repCard.append('tr')
+                    .append('th').text(`Voting History:`);
+                repCard.append('tr')
                     .append('td').text(`${value[8]}`)
                     .append('td').text(`${value[9]}`)
                 .append('tr')
                     .append('td').text(`${value[11]}`)
-                    .append('td').text(`${value[12]}`)
-                .append('tr').text(`Contact:`)
-                .append('tr').text(`${value[13]}`)
+                    .append('td').text(`${value[12]}`);
+                repCard.append('tr')
+                    .append('th').text(`Contact:`);
+                repCard.append('tr').text(`${value[13]}`)
                 .append('tr').text(`${value[14]}`)
                 .append('tr').text(`${value[15]}`)
                 .append('tr').text(`${value[16]}`)
