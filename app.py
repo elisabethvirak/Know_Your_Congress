@@ -6,7 +6,7 @@ import json
 from config import key
 import buildDB
 
-buildDB.build_mongo_db()
+#buildDB.build_mongo_db()
 
 app = Flask(__name__)
 
