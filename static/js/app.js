@@ -159,29 +159,29 @@
                 repCard.append('tr').text(`${value[13]}`)
                 .append('tr').text(`${value[14]}`);
                 if (value[15] !== 'Website: Not Reported') {
-                    repCard.append('tr').text(`YouTube: `)
-                        .append('a').attr('href',`${value[15]}`).text(`${value[15]}`);
+                    repCard.append('tr').text(`Website: `)
+                        .append('a').attr('href',`${value[15]}`).attr('target','_blank').text(`${value[15]}`);
                 }
                 else {
                     repCard.append('tr').text(`${value[15]}`)
                 };
                 if (facebookAccount !== 'Facebook: Not Reported') {
                     repCard.append('tr').text(`Facebook: `)
-                        .append('a').attr('href',`${value[16]}`).text(`${value[16]}`);
+                        .append('a').attr('href',`${value[16]}`).attr('target','_blank').text(`${value[16]}`);
                 }
                 else {
                     repCard.append('tr').text(`${value[16]}`)
                 };
                 if (value[17] !== 'Twitter: Not Reported') {
                     repCard.append('tr').text(`Twitter: `)
-                        .append('a').attr('href',`${value[17]}`).text(`${value[17]}`);
+                        .append('a').attr('href',`${value[17]}`).attr('target','_blank').text(`${value[17]}`);
                 }
                 else {
                     repCard.append('tr').text(`${value[17]}`)
                 };
                 if (value[18] !== 'YouTube: Not Reported') {
                     repCard.append('tr').text(`YouTube: `)
-                        .append('a').attr('href',`${value[18]}`).text(`${value[18]}`);
+                        .append('a').attr('href',`${value[18]}`).attr('target','_blank').text(`${value[18]}`);
                 }
                 else {
                     repCard.append('tr').text(`${value[18]}`)
