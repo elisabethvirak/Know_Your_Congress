@@ -34,10 +34,8 @@ function xScale(memberData, chosenX) {
         .domain([d3.min(memberData, d => d[chosenX]) * .9, d3.max(memberData, d => d[chosenX]) * 1.1])
         .range([0, chartWidth]);
     return xLinearScale;
-    console.log(xLinearScale)
 }
 
-/*
 function yScale(memberData, chosenY) {
     var yLinearScale = d3.scaleLinear()
         .domain([d3.min(memberData, d => d[chosenY]) * .9, d3.max(memberData, d => d[chosenY]) * 1.1])
@@ -358,4 +356,3 @@ d3.json("/members").then(function (memberData) {
             });
     });
 });
-*/
