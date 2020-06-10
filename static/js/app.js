@@ -149,6 +149,7 @@
                 repCard.append('tr')
                     .append('td').text(`${value[8]}`)
                     .append('td').text(`${value[9]}`)
+                    .append('td').text(`${value[10]}`)
                 .append('tr')
                     .append('td').text(`${value[11]}`)
                     .append('td').text(`${value[12]}`);

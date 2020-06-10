@@ -51,11 +51,15 @@ body {
     }
     tr {
         font-size: 14px;
+        line-height: 22px;
     }
-    .jumbotron {        
-        /* background-image: url(https://images.unsplash.com/photo-1572873682924-02a47e84876a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80/200); photo from Jon Sailer @eyefish73 on Unsplash */
-        /* background-size: cover; */
-        /* background: darkblue; */
+    .jumbotron {
+        max-width: 90%;
+        margin: auto;
+        background: rgb(23, 36, 78);
+    }
+    .btn {
+        background: royalblue;
     }
     .box {
         margin: 15px;
@@ -67,10 +71,14 @@ body {
         font-size: 18px;
         line-height: 50px;
       }
+    .card-header {
+        margin: auto;
+        /* background: rgb(23, 36, 78); */
+    }
     .card-title {
-        /* padding: 10px; */
         font-weight: bold;
         font-size: 22px;
+        padding: 15px;
     }
     .row-header {
         font-weight: bold;
