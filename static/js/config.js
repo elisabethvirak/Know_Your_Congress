@@ -1,0 +1,1 @@
+const MAP_API = "pk.eyJ1Ijoid2lzZW1hbnR5ciIsImEiOiJja2I5aGlpdGswOWtsMzNvdndwbms4NnptIn0.fkx-pV6ImNfnw53zhd0W9w";

@@ -53,4 +53,4 @@ def build_mongo_db ():
     # drop members colletion
     db.office_totals.drop()
 
-build_mongo_db()
+#build_mongo_db()
