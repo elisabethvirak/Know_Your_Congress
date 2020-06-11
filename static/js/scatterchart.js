@@ -39,7 +39,7 @@ function xScale(memberData, chosenX) {
 }
 function yScale(memberData, chosenY) {
     var yLinearScale = d3.scaleLinear()
-        .domain([d3.min(memberData, d => d[chosenY]) * 1, d3.max(memberData, d => d[chosenY]) * 1])
+        .domain([d3.min(memberData, d => d[chosenY]) * .9, d3.max(memberData, d => d[chosenY]) * 1.1])
         .range([chartHeight, 0]);
     return yLinearScale;
 }
@@ -49,7 +49,7 @@ function renderXAxis(newXScale, xAxis) {
     var bottomAxis = d3.axisBottom(newXScale);
 
     xAxis.transition()
-        .duration(1000)
+        .duration(100)
         .call(bottomAxis);
 
     return xAxis;
@@ -58,7 +58,7 @@ function renderYAxis(newYScale, yAxis) {
     var leftAxis = d3.axisLeft(newYScale);
 
     yAxis.transition()
-        .duration(1000)
+        .duration(100)
         .call(leftAxis);
 
     return yAxis;
@@ -67,13 +67,13 @@ function renderYAxis(newYScale, yAxis) {
 //built circles for scatter plot based on event listener values with a transition
 function renderPointsX(scatterPoints, newXScale, chosenX) {
     scatterPoints.transition()
-        .duration(1000)
+        .duration(100)
         .attr("cx", d => newXScale(d[chosenX]));//change the x axis data & scale
     return scatterPoints;
 }
 function renderPointsY(scatterPoints, newYScale, chosenY) {
     scatterPoints.transition()
-        .duration(1000)
+        .duration(100)
         .attr("cy", d => newYScale(d[chosenY])); //change the y axis data & scale
     return scatterPoints;
 }
@@ -81,13 +81,13 @@ function renderPointsY(scatterPoints, newYScale, chosenY) {
 //change abbreviated state labels inside of circles based on event listeners
 function renderTextX(circleText, newXScale, chosenX) {
     circleText.transition()
-        .duration(1000)
+        .duration(100)
         .attr("x", d => newXScale(d[chosenX])); //change x axis data & scale
     return circleText;
 }
 function renderTextY(circleText, newYScale, chosenY) {
     circleText.transition()
-        .duration(1000)
+        .duration(100)
         .attr("y", d => newYScale(d[chosenY])); //change y axis data & scale
     return circleText;
 }
@@ -255,7 +255,7 @@ d3.json("/members").then(function (memberData) {
         labelsGroupX.selectAll("text")
             .on("click", function () {
                 var value = d3.select(this).attr("value");
-                console.log("LOOK HERE", value);
+                console.log(value);
                 if (value !== chosenX) {
 
                     chosenX = value;
