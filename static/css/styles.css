@@ -58,9 +58,14 @@ body {
         margin: auto;
         background: rgb(23, 36, 78);
     }
-    /* .btn {
+    .btn {
         background: royalblue;
-    } */
+    }
+    .btn:hover {
+        background: royalblue;
+        text-decoration: none;
+        text-emphasis: bold;
+    }
     .box {
         margin: 15px;
         border-radius: 10px;

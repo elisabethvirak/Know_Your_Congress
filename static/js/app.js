@@ -10,7 +10,6 @@ function init() {
 
             // create repNamesList to push names to
             repNameList = []
-            repDataList = []
 
             // info for repNameList
             // save short title, first and last names to concatenate
@@ -21,7 +20,7 @@ function init() {
             var lastName = i.last_name;
             // console.log(lastName);
             var repID = i.id;
-            // console.log(repID);
+            console.log(repID);
 
             // create string of representatives' entire name
             var repName = shortTitle + ` ` + firstName + ` ` + lastName;
@@ -39,8 +38,7 @@ function init() {
                 menuOption.text(name[1]);
             });
         })
-
-        // buildRepCard(memberData[0].id);
+        buildRepCard(memberData[0].id);
     })
 }
 
@@ -51,6 +49,7 @@ function buildRepCard(selection) {
         
         var repCard = d3.select('#rep-info');
         repCard.html("")
+        repDataList = []
 
         memberData.forEach(i => {
 
@@ -222,5 +221,6 @@ function optionChanged(id) {
     
     buildRepCard(id)
 }
+
 
 init();

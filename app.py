@@ -30,18 +30,6 @@ def get_members():
         response.append(member)
     return jsonify(response)
 
-@app.route("/members/id/<id>")
-def member_card(id):
-    db = client.congress_db
-    members_data = db.members.find_one({'id':id})
-    members_data['_id'] = str(members_data['_id'])
-    # response = []
-    # for member in members_data:
-    #     member['id'] = str(member['id'])
-    #     response.append(member)
-    return jsonify(members_data)
-
-
 #load API response from mongo
 @app.route("/votes")
 def get_votes():
