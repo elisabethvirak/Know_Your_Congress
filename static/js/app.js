@@ -185,12 +185,7 @@ function buildRepCard(selection) {
 }
 
 function optionChanged(id) {
-        
-    var repCard = d3.select('#rep-info');
-    repCard.html("")
-    
     buildRepCard(id)
 }
-
 
 init();
