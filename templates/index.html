@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Know Your Congress</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@1&family=Teko:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  -->
     <link rel="stylesheet" href="/static/css/reset.css">
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
@@ -17,47 +20,41 @@
         <div class="jumbotron text-center">
             <h1>Know Your Congress</h1>
             <h2>Know How They Vote, When They Vote, If They Vote</h2>
-            <br>
-            <br>
             <p>
               <a class="btn btn-primary btn-lg" href="/members" role="button">Members Data</a>
               <a class="btn btn-primary btn-lg" href="/votes" role="button">Votes Data</a>
-              <a class="btn btn-primary btn-lg" href="/office_totals" role="button">Expense Data</a>
-              
             </p>
         </div>
         <div class = 'container'>
             <div class = 'row'>
-                <div class = 'col-md-12' id = 'map'>
-                    <a href='https://www.usa.gov/voter-registration'><img src='https://sileotech.com/wp-content/uploads/2018/09/Dn87d9rXcAAJ6w2.jpg'></a>
+                <div class = 'col-md-6' id = 'diverging-chart'>
+                </div>
+                <div class='col-md-6'>
+                    <div id='scatter'>
+                        <h2 class= plotTitle></h2>
+                    </div>
                 </div>
             </div>
             <div class = 'row'>
-                <div class = 'col-md-8' id = 'diverging-chart'>
-                    <h1>insert diverging bar chart here</h1>
-                </div>
-                <div class = 'col-md-4'>
+                <div class = 'col-md-12'>
                     <div class = 'box'>
                         <h4>Find Your Congressperson</h4>
                         <select id="congressPerson" onchange="optionChanged(this.value)"></select>
-                    </div>
-                    <div class = 'row'>
-                        <div class="col-md-12 panel panel-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">About Your Representative</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class = 'row'>
+                                <div class = 'col-md-6' id = 'rep-pic'></div>
+                                <div class = 'col-md-6' id='rep-info'></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class='row'>
-                <div class='col-md-8'>
-                    <div id='scatter'>
-                        <h1>insert scatter plot here</h1>
-                    </div>
-                </div>
-                <div class='col-md-4'>
-                    <div class="panel-heading">
-                        <h4 class="panel-title">About Your Representative</h4>
-                    </div>
-                    <div id="sample-metadata" class="panel-body"></div>
+            <div class = 'row'>
+                <div class = 'col-md-12' id = 'map'>
+                    <a href='https://www.usa.gov/voter-registration'><img src='https://sileotech.com/wp-content/uploads/2018/09/Dn87d9rXcAAJ6w2.jpg'></a>
                 </div>
             </div>
         </div>
@@ -68,7 +65,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-    <script type="text/javascript" src="static/js/scatterchart.js" ></script>
+    <script type="text/javascript" src="static/js/app.js" ></script>
+    <script type="text/javascript" src="static/js/diverging.js"></script>
+    <script type="text/javascript" src="static/js/scatterchart_new.js" ></script>
     
 </body>
 </html>
