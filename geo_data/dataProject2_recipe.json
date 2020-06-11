@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "layers": {
+    "hello_world": {
+      "source": "mapbox://tileset-source/wisemantyr/dataProject2",
+      "minzoom": 0,
+      "maxzoom": 14
+    }
+  }
+}
