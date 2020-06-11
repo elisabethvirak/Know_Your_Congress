@@ -43,23 +43,23 @@ def build_mongo_db ():
     db.members.drop() #drop existing members collection
     member_ids = [] #initialize list to check against for unique ids
 
-    for mem in congress_members:    #iterate through list of objects
-        if mem["id"] not in member_ids: #check if id is unique
-            mem_id = mem["id"] #set id equal to variable for query URL
-            member_ids.append(mem["id"]) #append unique ID to list
+    for mem in congress_members:
+        if mem["id"] not in member_ids: #check if value of ID is unique
+            mem_id = mem["id"] #if unique set id equal to string variable for query URL
+            member_ids.append(mem["id"]) #and append unique ID to list
             try:
-                #use member ID to create office expenses query URL
+                #use member ID to create office expenses query URL and get json
                 expense_url = f"https://api.propublica.org/congress/v1/members/{mem_id}/office_expenses/category/total.json"
-                #get json
                 expense_r = requests.get(expense_url, headers={"X-API-Key": key})
                 expense_json = expense_r.json()
-                #create "office_totals" key in member object
+                
+                #create "office_totals" key in member object and set value to desired result from query
                 mem["office_totals"] = expense_json["results"]
-                #add object to collection
-                db.members.insert_one(mem)
+            
+                db.members.insert_one(mem)   #add object to mongo collection
             except:
                 print ("error")
         else:
-            print("duplicate: " + mem["id"])
+            print("duplicate ID: " + mem["id"])
 
 build_mongo_db()
