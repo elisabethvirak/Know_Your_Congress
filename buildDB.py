@@ -62,4 +62,4 @@ def build_mongo_db ():
         else:
             print("duplicate: " + mem["id"])
 
-#build_mongo_db()
+build_mongo_db()
