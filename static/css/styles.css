@@ -144,14 +144,14 @@ body {
         font: 10px sans-serif;
         text-align: center;
         color: white;
-        background: blue;
+        background: rgb(23, 36, 78);
         border: 0;
         border-radius: 10px;
         opacity: 0.5;
       }
       .active-axis {
         font-weight: bold;
-        fill:black;
+        fill:rgb(23, 36, 78);
         transition: fill 0.3s ease-out;
         text-anchor: middle;
         font-size: 18px
