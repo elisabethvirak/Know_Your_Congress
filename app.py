@@ -5,8 +5,6 @@ import requests
 import json
 from config import key
 
-buildDB.build_mongo_db()
-
 app = Flask(__name__)
 
 # setup mongo connection
