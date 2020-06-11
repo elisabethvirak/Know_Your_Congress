@@ -20,7 +20,7 @@ function init() {
             var lastName = i.last_name;
             // console.log(lastName);
             var repID = i.id;
-            console.log(repID);
+            // console.log(repID);
 
             // create string of representatives' entire name
             var repName = shortTitle + ` ` + firstName + ` ` + lastName;
@@ -43,6 +43,18 @@ function init() {
 }
 
 function buildRepCard(selection) {
+    // var picFile = '../450x550'
+    // var repPicture = d3.select('#rep-pic');
+
+    // for (picture in picFile) {
+    //     console.log(picture);
+        // if (selection + '.jpg' == picture) {
+        //     repPicture.append('img').attr('src', picture);
+        // }
+        // else {
+        //     repPicture.append('h5').text(`Photo Not Available`)
+        // }
+    // }
     d3.json("/members").then(memberData => {
         // sanity check
         // console.log(memberData[0].short_title);
@@ -182,10 +194,6 @@ function buildRepCard(selection) {
             };
         });
     });
-}
-
-function optionChanged(id) {
-    buildRepCard(id)
 }
 
 init();
