@@ -38,25 +38,28 @@ def build_mongo_db ():
     members_r = requests.get(members_url, headers={"X-API-Key": key})
     members_json = members_r.json()
     members_json
+    congress_members = members_json['results'][0]["members"] #isolate members into a list of objects
     
-    congress_members = members_json['results'][0]["members"] #isolate members
-    
-    for mem in congress_members:
-        mem_id = mem["id"] #save the member id
-        try:
-            #use member ID to create office expenses query URL
-            expense_url = f"https://api.propublica.org/congress/v1/members/{mem_id}/office_expenses/category/total.json"
-            #get json
-            expense_r = requests.get(expense_url, headers={"X-API-Key": key})
-            expense_json = expense_r.json()
-        except:
-            print ("error")
-        #create key "office_totals" in members collection and append data
-        mem["office_totals"] = expense_json["results"]
+    db.members.drop() #drop existing members collection
+    member_ids = [] #initialize list to check against for unique ids
 
-    # drop members colletion
-    db.members.drop()
-    # create members collection with response
-    db.members.insert_many(congress_members)
+    for mem in congress_members:    #iterate through list of objects
+        if mem["id"] not in member_ids: #check if id is unique
+            mem_id = mem["id"] #set id equal to variable for query URL
+            member_ids.append(mem["id"]) #append unique ID to list
+            try:
+                #use member ID to create office expenses query URL
+                expense_url = f"https://api.propublica.org/congress/v1/members/{mem_id}/office_expenses/category/total.json"
+                #get json
+                expense_r = requests.get(expense_url, headers={"X-API-Key": key})
+                expense_json = expense_r.json()
+                #create "office_totals" key in member object
+                mem["office_totals"] = expense_json["results"]
+                #add object to collection
+                db.members.insert_one(mem)
+            except:
+                print ("error")
+        else:
+            print("duplicate: " + mem["id"])
 
 #build_mongo_db()

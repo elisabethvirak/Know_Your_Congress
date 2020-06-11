@@ -4,9 +4,8 @@ import pymongo
 import requests
 import json
 from config import key
-import buildDB
 
-#buildDB.build_mongo_db()
+buildDB.build_mongo_db()
 
 app = Flask(__name__)
 
@@ -39,19 +38,6 @@ def get_votes():
     for vote in votes_data:
         vote['_id'] = str(vote['_id'])
         response.append(vote)
-    return jsonify(response)
-
-@app.route("/features")
-def get_expenses():
-    db = client.congress_db
-    features_data = db.features.find()
-    response = []
-    for feature in features_data:
-        response.append({
-            "type": "Feature",
-            "geometry": {"type": "Polygon", "coordinates": feature["geometry"]["coordinates"]},
-            "properties": feature["properties"] 
-        })
     return jsonify(response)
 
 if __name__ == "__main__":
