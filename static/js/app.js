@@ -49,7 +49,7 @@ function buildRepCard(selection) {
         // console.log(memberData[0].short_title);  
         var repPicture = d3.select('#rep-pic');         
         var repCard = d3.select('#rep-info');
-        repCard.html("")
+        repCard.html("");
         repDataList = []
 
         memberData.forEach(i => {
@@ -189,7 +189,7 @@ function buildRepCard(selection) {
 
 function addPicture(rep) {
     var repPicture = d3.select('#rep-pic');      
-    // repPicture.html('');
+    repPicture.html('');
     // append pictures
     if (`https://github.com/unitedstates/images/blob/gh-pages/congress/450x550/${rep}.jpg?raw=true/`) {
         repPicture.append('img').attr('src',`https://github.com/unitedstates/images/blob/gh-pages/congress/450x550/${rep}.jpg?raw=true/`);
