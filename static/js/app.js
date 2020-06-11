@@ -134,58 +134,54 @@ function buildRepCard(selection) {
                     repCard.append('tr')
                         .append('th').text(`General:`);
                     repCard.append('tr').text(`Date of Birth: ${value[2]}`)
-                    .append('tr')
-                        .append('td').text(`Party: ${value[3]}`)
-                        .append('td').text(`State: ${value[4]}`)
-                        .append('td').text(`District: ${value[5]}`)
-                    .append('tr')
-                        .append('td').text(`Seniority: ${value[6]}`)
-                        .append('td').text(`Next Election Year: ${value[7]}`);
+                        .append('tr').text(`Party: ${value[3]}`)
+                        .append('tr').text(`State: ${value[4]}`)
+                        .append('tr').text(`District: ${value[5]}`)
+                        .append('tr').text(`Seniority: ${value[6]}`)
+                        .append('tr').text(`Next Election Year: ${value[7]}`);
     
                     // add voting history
                     repCard.append('tr')
                         .append('th').text(`Voting History:`);
-                    repCard.append('tr')
-                        .append('td').text(`Total Votes: ${value[8]}`)
-                        .append('td').text(`Missed Votes: ${value[9]}`)
-                        .append('td').text(`Percentage of Missed Votes: ${value[10]}%`)
-                    .append('tr')
-                        .append('td').text(`Votes With Party: ${value[11]}%`)
-                        .append('td').text(`Votes Against Party: ${value[12]}%`);
+                    repCard.append('tr').text(`Total Votes: ${value[8]}`)
+                        .append('tr').text(`Missed Votes: ${value[9]}`)
+                        .append('tr').text(`Percentage of Missed Votes: ${value[10]}%`)
+                        .append('tr').text(`Votes With Party: ${value[11]}%`)
+                        .append('tr').text(`Votes Against Party: ${value[12]}%`);
     
                     // add contact information
                     repCard.append('tr')
                         .append('th').text(`Contact:`);
                     repCard.append('tr').text(`Office: ${value[13]}`)
-                    .append('tr').text(`Ohone Number: ${value[14]}`);
-                    if (value[15] !== 'Website: Not Reported') {
-                        repCard.append('tr').text(`Website: `)
-                            .append('a').attr('href',`${value[15]}`).attr('target','_blank').text(`${value[15]}`);
-                    }
-                    else {
-                        repCard.append('tr').text(`${value[15]}`)
-                    };
-                    if (facebookAccount !== 'Facebook: Not Reported') {
-                        repCard.append('tr').text(`Facebook: `)
-                            .append('a').attr('href',`${value[16]}`).attr('target','_blank').text(`${value[16]}`);
-                    }
-                    else {
-                        repCard.append('tr').text(`${value[16]}`)
-                    };
-                    if (value[17] !== 'Twitter: Not Reported') {
-                        repCard.append('tr').text(`Twitter: `)
-                            .append('a').attr('href',`${value[17]}`).attr('target','_blank').text(`${value[17]}`);
-                    }
-                    else {
-                        repCard.append('tr').text(`${value[17]}`)
-                    };
-                    if (value[18] !== 'YouTube: Not Reported') {
-                        repCard.append('tr').text(`YouTube: `)
-                            .append('a').attr('href',`${value[18]}`).attr('target','_blank').text(`${value[18]}`);
-                    }
-                    else {
-                        repCard.append('tr').text(`${value[18]}`)
-                    };
+                        .append('tr').text(`Ohone Number: ${value[14]}`);
+                        if (value[15] !== 'Website: Not Reported') {
+                            repCard.append('tr').text(`Website: `)
+                                .append('a').attr('href',`${value[15]}`).attr('target','_blank').text(`${value[15]}`);
+                        }
+                        else {
+                            repCard.append('tr').text(`${value[15]}`)
+                        };
+                        if (facebookAccount !== 'Facebook: Not Reported') {
+                            repCard.append('tr').text(`Facebook: `)
+                                .append('a').attr('href',`${value[16]}`).attr('target','_blank').text(`${value[16]}`);
+                        }
+                        else {
+                            repCard.append('tr').text(`${value[16]}`)
+                        };
+                        if (value[17] !== 'Twitter: Not Reported') {
+                            repCard.append('tr').text(`Twitter: `)
+                                .append('a').attr('href',`${value[17]}`).attr('target','_blank').text(`${value[17]}`);
+                        }
+                        else {
+                            repCard.append('tr').text(`${value[17]}`)
+                        };
+                        if (value[18] !== 'YouTube: Not Reported') {
+                            repCard.append('tr').text(`YouTube: `)
+                                .append('a').attr('href',`${value[18]}`).attr('target','_blank').text(`${value[18]}`);
+                        }
+                        else {
+                            repCard.append('tr').text(`${value[18]}`)
+                        };
                 });
             };
         });
