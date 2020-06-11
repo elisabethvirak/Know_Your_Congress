@@ -55,47 +55,25 @@ function buildRepCard(selection) {
 
             if (i.id == selection) {
 
-                var firstName = i.first_name;
-                // console.log(firstName);
-                var lastName = i.last_name;
-                // console.log(lastName);
+                // var firstName = i.first_name;
+                // // console.log(firstName);
+                // var lastName = i.last_name;
+                // // console.log(lastName);
                 var repID = i.id;
                 // console.log(repID);
     
                 //info for repDataList
-                // general
-                var repTableName = `Representative: ` + firstName + ` ` + lastName;
+                var repTableName = i.first_name + ` ` + i.last_name;
                 // console.log(repTableName);
-                var birthDate = `Date of Birth: ` + i.date_of_birth;
-                // console.log(birthDate);
-                var party = `Party: ` + i.party;
-                // console.log(party);
-                var state = `State: ` + i.state;
-                // console.log(state);
-                var district = `District: ` + i.district;
-                // console.log(district);
-                var seniority = `Seniority: ` + i.seniority;
-                // console.log(seniority);
-                var nextElection = `Next Election Year: ` + i.next_election;
-                // console.log(nextElection);
-    
-                // votes
-                var totalVotes = `Total Votes: ` + i.total_votes;
-                // console.log(totalVotes);
-                var missedVotes = `Missed Votes: ` + i.missed_votes;
-                // console.log(missedVotes);
-                var missedVotesPCT = `Percentage of Missed Votes: ` + i.missed_votes_pct + `%`;
-                // console.log(missedVotesPCT);
-                var votesWith = `Votes With Party: ` + i.votes_with_party_pct + `%`;
-                // console.log(votesWith);
-                var votesAgainst = `Votes Against Party: ` + i.votes_against_party_pct + `%`;
-                // console.log(votesAgainst);
-    
-                // contact
-                var office = `Office: ` + i.office;
-                // console.log(office);
-                var phoneNumber = `Phone Number: ` + i.phone;
-                // console.log(phoneNumber);
+                if (i.party == 'R') {
+                    var party = 'Republican';
+                }
+                else if (i.party == 'D') {
+                    var party = 'Democrat';
+                }
+                else {
+                    var party = 'Independent';
+                }
                 if (i.url) {
                     var url = i.url;
                 }
@@ -129,19 +107,19 @@ function buildRepCard(selection) {
                 repDataList.push([
                     repID,
                     repTableName,
-                    birthDate,
+                    i.date_of_birth,
                     party,
-                    state,
-                    district,
-                    seniority,
-                    nextElection,
-                    totalVotes,
-                    missedVotes,
-                    missedVotesPCT,
-                    votesWith,
-                    votesAgainst,
-                    office,
-                    phoneNumber,
+                    i.state,
+                    i.district,
+                    i.seniority,
+                    i.next_election,
+                    i.total_votes,
+                    i.missed_votes,
+                    i.missed_votes_pct,
+                    i.votes_with_party_pct,
+                    i.votes_against_party_pct,
+                    i.office,
+                    i.phone,
                     url,
                     facebookAccount,
                     twitter,
@@ -150,36 +128,36 @@ function buildRepCard(selection) {
                 // console.log(repDataList);
 
                 Object.entries(repDataList).forEach(([key,value]) => {
-                    repCard.append('th').text(`${value[1]}`);
+                    repCard.append('th').text(`Representative: ${value[1]}`);
     
                     // add general information
                     repCard.append('tr')
                         .append('th').text(`General:`);
-                    repCard.append('tr').text(`${value[2]}`)
+                    repCard.append('tr').text(`Date of Birth: ${value[2]}`)
                     .append('tr')
-                        .append('td').text(`${value[3]}`)
-                        .append('td').text(`${value[4]}`)
-                        .append('td').text(`${value[5]}`)
+                        .append('td').text(`Party: ${value[3]}`)
+                        .append('td').text(`State: ${value[4]}`)
+                        .append('td').text(`District: ${value[5]}`)
                     .append('tr')
-                        .append('td').text(`${value[6]}`)
-                        .append('td').text(`${value[7]}`);
+                        .append('td').text(`Seniority: ${value[6]}`)
+                        .append('td').text(`Next Election Year: ${value[7]}`);
     
                     // add voting history
                     repCard.append('tr')
                         .append('th').text(`Voting History:`);
                     repCard.append('tr')
-                        .append('td').text(`${value[8]}`)
-                        .append('td').text(`${value[9]}`)
-                        .append('td').text(`${value[10]}`)
+                        .append('td').text(`Total Votes: ${value[8]}`)
+                        .append('td').text(`Missed Votes: ${value[9]}`)
+                        .append('td').text(`Percentage of Missed Votes: ${value[10]}%`)
                     .append('tr')
-                        .append('td').text(`${value[11]}`)
-                        .append('td').text(`${value[12]}`);
+                        .append('td').text(`Votes With Party: ${value[11]}%`)
+                        .append('td').text(`Votes Against Party: ${value[12]}%`);
     
                     // add contact information
                     repCard.append('tr')
                         .append('th').text(`Contact:`);
-                    repCard.append('tr').text(`${value[13]}`)
-                    .append('tr').text(`${value[14]}`);
+                    repCard.append('tr').text(`Office: ${value[13]}`)
+                    .append('tr').text(`Ohone Number: ${value[14]}`);
                     if (value[15] !== 'Website: Not Reported') {
                         repCard.append('tr').text(`Website: `)
                             .append('a').attr('href',`${value[15]}`).attr('target','_blank').text(`${value[15]}`);
