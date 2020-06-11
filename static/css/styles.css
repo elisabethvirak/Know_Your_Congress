@@ -58,9 +58,9 @@ body {
         margin: auto;
         background: rgb(23, 36, 78);
     }
-    .btn {
+    /* .btn {
         background: royalblue;
-    }
+    } */
     .box {
         margin: 15px;
         border-radius: 10px;
@@ -87,6 +87,7 @@ body {
         background: royalblue;
     }
     #rep-info {
+        /* widthL min-content; */
         color: royalblue;
         background: white;
         border: gold;
