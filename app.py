@@ -41,14 +41,17 @@ def get_votes():
         response.append(vote)
     return jsonify(response)
 
-@app.route("/office_totals")
+@app.route("/features")
 def get_expenses():
     db = client.congress_db
-    expenses_data = db.office_totals.find()
+    features_data = db.features.find()
     response = []
-    for totals in expenses_data:
-        totals['_id'] = str(totals['_id'])
-        response.append(totals)
+    for feature in features_data:
+        response.append({
+            "type": "Feature",
+            "geometry": {"type": "Polygon", "coordinates": feature["geometry"]["coordinates"]},
+            "properties": feature["properties"] 
+        })
     return jsonify(response)
 
 if __name__ == "__main__":
