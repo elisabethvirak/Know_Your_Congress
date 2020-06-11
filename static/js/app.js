@@ -54,15 +54,10 @@ function buildRepCard(selection) {
         memberData.forEach(i => {
 
             if (i.id == selection) {
-
-                // var firstName = i.first_name;
-                // // console.log(firstName);
-                // var lastName = i.last_name;
-                // // console.log(lastName);
-                var repID = i.id;
-                // console.log(repID);
     
                 //info for repDataList
+                var repID = i.id;
+                // console.log(repID);
                 var repTableName = i.first_name + ` ` + i.last_name;
                 // console.log(repTableName);
                 if (i.party == 'R') {
@@ -74,6 +69,7 @@ function buildRepCard(selection) {
                 else {
                     var party = 'Independent';
                 }
+                // console.log(party);
                 if (i.url) {
                     var url = i.url;
                 }
