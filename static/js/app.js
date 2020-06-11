@@ -39,26 +39,15 @@ function init() {
             });
         })
         buildRepCard(memberData[0].id);
+        addPicture(memberData[0].id);
     })
 }
 
 function buildRepCard(selection) {
-    // var picFile = '../450x550'
-    // var repPicture = d3.select('#rep-pic');
-
-    // for (picture in picFile) {
-    //     console.log(picture);
-        // if (selection + '.jpg' == picture) {
-        //     repPicture.append('img').attr('src', picture);
-        // }
-        // else {
-        //     repPicture.append('h5').text(`Photo Not Available`)
-        // }
-    // }
     d3.json("/members").then(memberData => {
         // sanity check
-        // console.log(memberData[0].short_title);
-        
+        // console.log(memberData[0].short_title);  
+        var repPicture = d3.select('#rep-pic');         
         var repCard = d3.select('#rep-info');
         repCard.html("")
         repDataList = []
@@ -66,7 +55,6 @@ function buildRepCard(selection) {
         memberData.forEach(i => {
 
             if (i.id == selection) {
-    
                 //info for repDataList
                 var repID = i.id;
                 // console.log(repID);
@@ -136,7 +124,10 @@ function buildRepCard(selection) {
                 // console.log(repDataList);
 
                 Object.entries(repDataList).forEach(([key,value]) => {
-                    repCard.append('th').text(`Representative: ${value[1]}`);
+                    repPicture.append('h4').text(`${value[1]}`);
+                    repPicture.append('h5').text(`Contact:`);
+                    repPicture.append('h6').text(`Office: ${value[13]}`)
+                        .append('h6').text(`Phone Number: ${value[14]}`);
     
                     // add general information
                     repCard.append('tr')
@@ -159,7 +150,7 @@ function buildRepCard(selection) {
     
                     // add contact information
                     repCard.append('tr')
-                        .append('th').text(`Contact:`);
+                        .append('th').text(`Social:`);
                     repCard.append('tr').text(`Office: ${value[13]}`)
                         .append('tr').text(`Ohone Number: ${value[14]}`);
                         if (value[15] !== 'Website: Not Reported') {
@@ -194,6 +185,23 @@ function buildRepCard(selection) {
             };
         });
     });
+}
+
+function addPicture(rep) {
+    var repPicture = d3.select('#rep-pic');      
+    // repPicture.html('');
+    // append pictures
+    if (`https://github.com/unitedstates/images/blob/gh-pages/congress/450x550/${rep}.jpg?raw=true/`) {
+        repPicture.append('img').attr('src',`https://github.com/unitedstates/images/blob/gh-pages/congress/450x550/${rep}.jpg?raw=true/`);
+    }
+    else {
+        repPicture.append('h3').text('Image Not Found');
+    }
+}
+
+function optionChanged(id) {
+    buildRepCard(id);
+    addPicture(id);
 }
 
 init();

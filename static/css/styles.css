@@ -42,6 +42,18 @@ body {
         font-size: 24px;
         line-height: 35px;
     }
+    h6 {
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        line-height: 35px;
+    }
+    h6 {
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        line-height: 28px;
+    }
     a {
         font-size: 14px;
     }
@@ -49,8 +61,8 @@ body {
         font-size: 14px;
     }
     img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 99%;
+        max-height: 99%;
     }
     th {
         font-size: 16px;
@@ -99,11 +111,20 @@ body {
         color: white;
         background: royalblue;
     }
+    /* #rep-pic th {
+        color: white;
+        text-align: center;
+        /* padding: 0px 15px; */
+    /* } */
+    /* #rep-pic tr { */
+        /* color: white; */
+        /* text-align: center; */
+        /* padding: 0px 15px; */
+    /* } */
     #rep-info {
         /* widthL min-content; */
         color: royalblue;
         background: white;
-        border: gold;
-        border-radius: 5px;
+        border-radius: 10px;
         text-align: left;
     }
