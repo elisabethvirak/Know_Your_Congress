@@ -1,0 +1,4 @@
+<div id="tp2" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'I\'m a TitlePane Too'">
+    Click arrow to close me.
+</div>
+
