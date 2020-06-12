@@ -123,7 +123,7 @@ d3.json("/members").then(function (memberData) {
         .append("circle")
         .attr("cx", d => xLinearScale(d[chosenX]))
         .attr("cy", d => yLinearScale(d[chosenY]))
-        .attr("r", 4) //size of points
+        .attr("r", 6) //size of points
         .attr("fill", "#ff0000") //color of points
         .attr("opacity", ".75")
         .on("mouseover", function (d){
