@@ -14,8 +14,7 @@ d3.json("/votes").then(function (votesData){
 
         require(["dijit/TitlePane", "dojo/dom", "dojo/domReady!"], function(TitlePane, dom){
             var tp = new TitlePane({title: billID, content: description});
-            dom.byId("tp").appendChild(tp.domNode);
-            tp.startup();
+            dom.byId("tp").appendChild(tp.domNode)
         });
     })
 })

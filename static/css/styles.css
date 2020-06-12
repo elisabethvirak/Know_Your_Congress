@@ -40,3 +40,8 @@ img {
     color: white;
     }
 #mapid { height: 500px; }
+
+.dijitTitlePaneTextNode {
+    font-weight: bold;
+    font-size: 15px
+}
