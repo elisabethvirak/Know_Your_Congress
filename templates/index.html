@@ -35,7 +35,7 @@
                 <div class='col-md-12'>
                     <div class='box'>
                         <h4>Find Your Congressperson</h4>
-                        <select id="congressPerson" onchange="optionChanged(this.value)"></select>
+                        <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
                         <div class="card-header">
                             <h3 class="card-title">About Your Representative</h3>
                         </div>
@@ -55,10 +55,20 @@
                     </div>
                 </div>
             </div>
-            <div class = 'row'>
+            <div class = 'row box'>
                 <div class = 'col-md-8' id = 'diverging-chart'>
                 </div>
-                <div class = 'col-md-5' id = 'bill-card'>
+                <div class = 'col-md-5'>
+                    <h4>Want to know more about the bills your representatives are voting on?</h4>
+                    <select id="billMenu" onchange="billOptionChanged(this.value)"></select>
+                    <div class="card-header">
+                        <h3 class="card-title">About Your Bills</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class='row'>
+                            <div class='col-md-6' id = 'bill-card'></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,9 +100,10 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
     <script type="text/javascript" src="static/js/app.js"></script>
-    <script type="text/javascript" src="static/js/diverging.js"></script>
     <script type="text/javascript" src="static/js/scatterchart_new.js"></script>
+    <script type="text/javascript" src="static/js/diverging.js"></script>
     <script type="text/javascript" src="static/js/config.js"></script>
+    <script type="text/javascript" src="static/js/billCard.js"></script>
     <script type="text/javascript" src="static/js/congressDistrictsMap.js"></script>
 
 </body>
