@@ -25,12 +25,12 @@ function buildPlot() {
             
         });
 
-        console.log(bill);
-        console.log(democraticYes);
-        console.log(democraticNo);
-        console.log(independentYes);
-        console.log(republicanYes);
-        console.log(republicanNo);
+        // console.log(bill);
+        // console.log(democraticYes);
+        // console.log(democraticNo);
+        // console.log(independentYes);
+        // console.log(republicanYes);
+        // console.log(republicanNo);
         //console.log(billTitle);
 
             var trace1= {
@@ -112,8 +112,8 @@ function buildPlot() {
                     title: "Number of Votes"
 
                 },
-                width: 1000,
-                height: 800
+                width: 700,
+                height: 700
             }
   
             Plotly.newPlot("diverging-chart", allData, layout);
