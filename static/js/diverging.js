@@ -1,7 +1,7 @@
 //Import data
 function buildPlot() {
     d3.json("/votes"). then(function (votesData) {
-        console.log(votesData);
+        // console.log(votesData);
 
         var bill = []
         var democraticYes = []

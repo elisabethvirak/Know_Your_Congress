@@ -25,7 +25,10 @@ function init() {
             // create string of representatives' entire name
             var repName = shortTitle + ` ` + firstName + ` ` + lastName;
             // add to repNameList to iterate through later
-            repNameList.push([repID, repName])
+            repNameList.push([repID, 
+                repName, 
+                i.state,
+                i.district,])
             // console.log(repNameList);
 
             // select dropdown menu
@@ -35,7 +38,7 @@ function init() {
                 // console.log(name[0]);
                 var menuOption = dropdownMenu.append('option');
                 menuOption.attr('value', name[0]);
-                menuOption.text(name[1]);
+                menuOption.text(name[1] + `, ` + name[2] + `, ` + name[3]);
             });
         })
         buildRepCard(memberData[0].id);
@@ -199,7 +202,7 @@ function addPicture(rep) {
     }
 }
 
-function optionChanged(id) {
+function repOptionChanged(id) {
     buildRepCard(id);
     addPicture(id);
 }

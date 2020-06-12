@@ -103,7 +103,7 @@ tr {
 /* -------------------------------Classes------------------------------ */
 .active-axis {
     font-weight: bold;
-    fill: rgb(23, 36, 78);
+    fill: white;
     transition: fill 0.3s ease-out;
     text-anchor: middle;
     font-size: 18px
@@ -120,7 +120,7 @@ tr {
     margin: 15px;
     border-radius: 10px;
     padding: 30px;
-    background: rgba(23, 36, 78, 0.9);
+    background: rgba(23, 36, 78, 0.8);
     color: white;
     text-align: center;
     font-size: 18px;
@@ -149,19 +149,35 @@ tr {
     max-width: 90%;
 }
 
+.dijitTitlePane {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: royalblue;
+    padding: 15px;
+}
+
+.dijitTitlePaneContentInner {
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: rgb(23, 36, 78);
+}
+
 .iframeContainer {
     padding: 20px;
     border: 1px solid #E3E3E3;
 }
 .inactive-axis {
-    font-weight: lighter;
-    fill: grey;
+    font-weight: bold;
+    fill: rgb(23, 36, 78);
     transition: fill 0.3s ease-out;
     text-anchor: middle;
 }
 
 .inactive-axis:hover {
-    fill: black;
+    fill: red;
     font-weight: bold;
     cursor: pointer;
 }
