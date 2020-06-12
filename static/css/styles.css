@@ -25,7 +25,7 @@ body {
         line-height: 65px;
         text-transform: uppercase;
         text-align: center;
-        padding: 15px;        
+        padding: 15px;
         background-image: url(https://images.unsplash.com/photo-1572873682924-02a47e84876a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80/200); /*photo from Jon Sailer @eyefish73 on Unsplash*/
         background-size: cover;
         background-clip: text;
@@ -67,8 +67,8 @@ body {
     th {
         font-size: 16px;
         line-height: 35px;
-        font-weight: bold;     
-        color: rgb(23, 36, 78);   
+        font-weight: bold;
+        color: rgb(23, 36, 78);
     }
     tr {
         font-size: 14px;
@@ -129,9 +129,6 @@ body {
         border-radius: 10px;
         text-align: left;
     }
-
-
-
     .iframeContainer {
         padding: 20px;
         border: 1px solid #E3E3E3;
