@@ -2,3 +2,5 @@ config.py
 .ipynb_checkpoints
 __pycache__
 .DS_Store
+config.js
+cd_116.geojson

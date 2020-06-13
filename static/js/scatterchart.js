@@ -39,7 +39,11 @@ function xScale(memberData, chosenX) {
 }
 function yScale(memberData, chosenY) {
     var yLinearScale = d3.scaleLinear()
+<<<<<<< HEAD
         .domain([d3.min(memberData, d => d[chosenY]) * .9, d3.max(memberData, d => d[chosenY]) * 1.1])
+=======
+        .domain([d3.min(memberData, d => d[chosenY]) * 1, d3.max(memberData, d => d[chosenY]) * 1])
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         .range([chartHeight, 0]);
     return yLinearScale;
 }
@@ -49,7 +53,11 @@ function renderXAxis(newXScale, xAxis) {
     var bottomAxis = d3.axisBottom(newXScale);
 
     xAxis.transition()
+<<<<<<< HEAD
         .duration(100)
+=======
+        .duration(1000)
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         .call(bottomAxis);
 
     return xAxis;
@@ -58,7 +66,11 @@ function renderYAxis(newYScale, yAxis) {
     var leftAxis = d3.axisLeft(newYScale);
 
     yAxis.transition()
+<<<<<<< HEAD
         .duration(100)
+=======
+        .duration(1000)
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         .call(leftAxis);
 
     return yAxis;
@@ -67,13 +79,21 @@ function renderYAxis(newYScale, yAxis) {
 //built circles for scatter plot based on event listener values with a transition
 function renderPointsX(scatterPoints, newXScale, chosenX) {
     scatterPoints.transition()
+<<<<<<< HEAD
         .duration(100)
+=======
+        .duration(1000)
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         .attr("cx", d => newXScale(d[chosenX]));//change the x axis data & scale
     return scatterPoints;
 }
 function renderPointsY(scatterPoints, newYScale, chosenY) {
     scatterPoints.transition()
+<<<<<<< HEAD
         .duration(100)
+=======
+        .duration(1000)
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         .attr("cy", d => newYScale(d[chosenY])); //change the y axis data & scale
     return scatterPoints;
 }
@@ -81,13 +101,21 @@ function renderPointsY(scatterPoints, newYScale, chosenY) {
 //change abbreviated state labels inside of circles based on event listeners
 function renderTextX(circleText, newXScale, chosenX) {
     circleText.transition()
+<<<<<<< HEAD
         .duration(100)
+=======
+        .duration(1000)
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         .attr("x", d => newXScale(d[chosenX])); //change x axis data & scale
     return circleText;
 }
 function renderTextY(circleText, newYScale, chosenY) {
     circleText.transition()
+<<<<<<< HEAD
         .duration(100)
+=======
+        .duration(1000)
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         .attr("y", d => newYScale(d[chosenY])); //change y axis data & scale
     return circleText;
 }
@@ -110,7 +138,11 @@ function updateToolTip(chosenX, chosenY, circleText) {
         plotTitle1 = "Office Spending vs."
     }
 
+<<<<<<< HEAD
     if (chosenY === "seniority") {
+=======
+    if (chosenY === "Seniority") {
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
         yLabel = "Seniority (years?)";
         plotTitle2 = "Seniority";
     }
@@ -255,7 +287,10 @@ d3.json("/members").then(function (memberData) {
         labelsGroupX.selectAll("text")
             .on("click", function () {
                 var value = d3.select(this).attr("value");
+<<<<<<< HEAD
                 console.log(value);
+=======
+>>>>>>> 9db754dd44e893b9b4c8428c8a02fdfef190e84a
                 if (value !== chosenX) {
 
                     chosenX = value;

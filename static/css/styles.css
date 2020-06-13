@@ -1,41 +1,255 @@
-body {
-    background: white;
+/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+html {
+    position: relative;
+    min-height: 100%;
 }
-    h1 {
-        font-family: arial;
-        font-size: 30px;
-        line-height: 45px;
-        text-transform: uppercase;
-        text-align: center;
-        padding: 70px;
-        background-image: url(https://unsplash.it/800);
-        background-size: cover;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-    h2 {
 
-    }
-    h3 {
+body {
+    font-family: arial;
+    background-image: url('https://images.unsplash.com/photo-1519674921880-e784bc34ebd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80');
+    /*photo from Jacob Wall @jacobwall_ on Unsplash*/
+    background-size: cover;
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-    }
-    p {
+a {
+    font-size: 14px;
+}
 
-    }
-    a {
+a:hover {
+    font-size: 14px;
+}
 
-    }
-    a:hover {
+br {
+    max-height: 50px;
+}
 
-    }
-    img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-    .box {
-        padding: 30px;
-        margin: 15px;
-        background: royalblue;
-        color: white;
-      }
+h1 {
+    font-family: 'IM Fell English';
+    font-size: 80px;
+    line-height: 95px;
+    text-transform: uppercase;
+    text-align: center;
+    background-image: url(https://images.unsplash.com/photo-1572873682924-02a47e84876a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80/200);
+    /*photo from Jon Sailer @eyefish73 on Unsplash*/
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    font-family: 'Teko', sans-serif;
+    font-size: 50px;
+    line-height: 65px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px;
+    background-image: url(https://images.unsplash.com/photo-1572873682924-02a47e84876a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80/200);
+    /*photo from Jon Sailer @eyefish73 on Unsplash*/
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h3 {
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 35px;
+}
+
+h5 {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    line-height: 35px;
+}
+
+h6 {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+img {
+    max-width: 99%;
+    max-height: 99%;
+}
+
+th {
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: bold;
+    color: rgb(23, 36, 78);
+}
+
+tr {
+    font-size: 14px;
+    line-height: 28px;
+    color: rgb(23, 36, 78);
+}
+
+/* -------------------------------Classes------------------------------ */
+.active-axis {
+    font-weight: bold;
+    fill: rgb(23, 36, 78);
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+    font-size: 18px
+}
+
+.article {
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+}
+
+.box {
+    margin: 15px;
+    border-radius: 10px;
+    padding: 30px;
+    background: rgba(23, 36, 78, 0.9);
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.btn {
+    background: royalblue;
+}
+
+.btn:hover {
+    background: royalblue;
+    text-decoration: none;
+    text-emphasis: bold;
+}
+
+.card-header {
+    margin: auto;
+}
+
+.card-title {
+    padding: 20px;
+}
+
+.container {
+    max-width: 90%;
+}
+
+.iframeContainer {
+    padding: 20px;
+    border: 1px solid #E3E3E3;
+}
+.inactive-axis {
+    font-weight: lighter;
+    fill: grey;
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+}
+
+.inactive-axis:hover {
+    fill: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.jumbotron {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: rgb(23, 36, 78, 0.9);
+}
+
+.map_box_container {
+    position: absolute;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.row-header {
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background: royalblue;
+}
+
+.scatterpoint-text {
+    font-size: small;
+}
+
+.tooltip {
+    position: absolute;
+    width: 155px;
+    height: 80px;
+    padding: 10px;
+    font: 10px sans-serif;
+    text-align: center;
+    color: white;
+    background: rgb(23, 36, 78);
+    border: 0;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+
+/* -------------------------------IDs------------------------------ */
+#articleTitle {
+    padding-top: 30px;
+    font-style: italic;
+}
+
+#bill-card {
+    color: royalblue;
+    background: white;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#diverging-chart {
+    border-radius: 10px;
+    max-height: 800px;
+    max-width: 800px;
+    display: inline;
+    /* padding: 50px 50px 50px 50px; */
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 500px;
+}
+
+#page-title {
+    border-bottom: 1px solid black;
+    font-family: Cambria;
+}
+
+#rep-info {
+    color: royalblue;
+    background: white;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#scatter {
+    border-radius: 10px;
+    max-height: 800px;
+    max-width: 90%;
+    display: inline;
+    padding: 50px 50px 50px 50px;
+}
