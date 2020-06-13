@@ -242,7 +242,6 @@ tr {
     max-height: 800px;
     max-width: 800px;
     display: inline;
-    /* padding: 50px 50px 50px 50px; */
 }
 
 #map {
@@ -251,6 +250,7 @@ tr {
     bottom: 0;
     width: 100%;
     height: 500px;
+    margin-bottom: 50px;
 }
 
 #page-title {
