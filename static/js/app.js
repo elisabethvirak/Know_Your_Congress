@@ -38,7 +38,7 @@ function init() {
                 // console.log(name[0]);
                 var menuOption = dropdownMenu.append('option');
                 menuOption.attr('value', name[0]);
-                menuOption.text(name[1] + `, ` + name[2] + `, ` + name[3]);
+                menuOption.text(name[1] + `, ` + name[2] + `, District:` + name[3]);
             });
         })
         buildRepCard(memberData[0].id);
