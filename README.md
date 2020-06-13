@@ -44,7 +44,7 @@ Files to include in .gitignore:
   - \_\_pycache_\_
 
 Files needed:
-  - config.py in the same directoy as app.py with ProPublic Congress API key as a variable named "key" (get here: https://projects.propublica.org/api-docs/congress-api/)
+  - config.py in the same directoy as app.py with ProPublica Congress API key as a variable named "key" (get here: https://projects.propublica.org/api-docs/congress-api/)
   - config.js in the static/js directory with a MapBox access token as const variable named "MAP_API" (get here: https://www.mapbox.com/)
 
 Steps to run the flask app sucessfully:
