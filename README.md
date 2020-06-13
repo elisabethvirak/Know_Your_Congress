@@ -4,7 +4,7 @@
 
 Our team was interested in the congresspeople that represent each of us. We want to make this data exciting and easily accessible through an interactive dashboard.
 
-To accomplish this we used the ProPublic Congress API. We queried the API with Python requests and json libraries then used PyMongo to upload the JSON responses to a Mongo database. We served the Flask API routes from the database collections. 
+To accomplish this we used the ProPublica Congress API. We queried the API with Python requests and json libraries then used PyMongo to upload the JSON responses to a Mongo database. We served the Flask API routes from the database collections. 
 
 The dashboard includes member demographics based on a dropdown menu using D3.js, a D3.js scatterchart with aggregated data about all congressmembers, a Plotly bar chart displaying a breakdown of how political parties have voted on recent bills, and a mapbox map of congressional districts.
 
