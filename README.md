@@ -57,5 +57,7 @@ Steps to run the flask app sucessfully:
 
 #### CREDIT TO:
 ProPublica for the API: https://projects.propublica.org/api-docs/congress-api/
+
 unitedstates GitHub for Congressmembers photos: https://github.com/unitedstates/images/tree/gh-pages/congress/225x275
+
 Data.gov for congressional districts shapefile: https://catalog.data.gov/dataset/tiger-line-shapefile-2018-nation-u-s-116th-congressional-district-national
