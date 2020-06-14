@@ -39,12 +39,6 @@ Python Depedencies:
 
 Files to include in .gitignore:
   - config.py
-  - config.js
-  - cd_116.geojson
-  - \_\_pycache_\_
-
-Files to include in .gitignore:
-  - config.py
   - cd_116.geojson
   - \_\_pycache_\_
 
