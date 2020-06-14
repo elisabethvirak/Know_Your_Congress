@@ -43,17 +43,17 @@ Files to include in .gitignore:
   - cd_116.geojson
   - \_\_pycache_\_
 
+Files to include in .gitignore:
+  - config.py
+  - cd_116.geojson
+  - \_\_pycache_\_
+
 Files needed:
   - config.py in the same directoy as app.py with ProPublica Congress API key as a variable named "key" (get here: https://projects.propublica.org/api-docs/congress-api/)
-  - config.js in the static/js directory with a MapBox access token as const variable named "MAP_API" (get here: https://www.mapbox.com/)
 
-Steps to run the flask app sucessfully:
+To run the flask app simply run the app.py script in the app directory.
 
-1. Run the convertGeoJSON.py script in the geo_data directory to create the GeoJSON file for the map. This file needs to be created by every user as it is too large for GitHub to store. The file is included in the .gitignore.
-
-2. Run the buildDB.py script in the main directory to create the mongo database. Ensure connection to mongo prior to running. This script will not run if step 1 is not completed as it creates a features collection in the database from the GeoJSON file. While this collection is not currently being used, we have used it for reference and may find a use for it in the future.
-
-3. Run the app.py script in the main directory.
+The mongo database is hosted using Mongo Atlas. If you would like a local copy of the database run the buildDB.py script in the main directory.
 
 #### CREDIT TO:
 ProPublica for the API: https://projects.propublica.org/api-docs/congress-api/
