@@ -43,7 +43,7 @@ Files to include in .gitignore:
   - \_\_pycache_\_
 
 Files needed:
-  - config.py in the same directoy as app.py with ProPublica Congress API key as a variable named "key" (get here: https://projects.propublica.org/api-docs/congress-api/)
+  - config.py in the same directoy as app.py with ProPublica Congress API key as a variable named "congress_key" (get here: https://projects.propublica.org/api-docs/congress-api/)
 
 To run the flask app simply run the app.py script in the app directory.
 
