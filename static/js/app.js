@@ -1,7 +1,7 @@
 function init() {
     d3.json("/members").then(memberData => {
         // sanity check
-        // console.log(memberData[0].short_title);
+        // console.log(memberData);
         
         memberData.forEach(i => {
             // sanity check
@@ -38,7 +38,7 @@ function init() {
                 // console.log(name[0]);
                 var menuOption = dropdownMenu.append('option');
                 menuOption.attr('value', name[0]);
-                menuOption.text(name[1] + `, ` + name[2] + `, District:` + name[3]);
+                menuOption.text(name[1] + `, ` + name[2] + `, District: ` + name[3]);
             });
         })
         buildRepCard(memberData[0].id);
@@ -127,62 +127,62 @@ function buildRepCard(selection) {
                 // console.log(repDataList);
 
                 Object.entries(repDataList).forEach(([key,value]) => {
-                    repPicture.append('h4').text(`${value[1]}`);
+                    repPicture.append('h4').text(`${value[1]}`).append('hr');
                     repPicture.append('h5').text(`Contact:`);
-                    repPicture.append('h6').text(`Office: ${value[13]}`)
-                        .append('h6').text(`Phone Number: ${value[14]}`);
+                    repPicture.append('p').text(`Office: ${value[13]}`)
+                        .append('h6').text(`Phone Number: ${value[14]}`)
+                        .append('hr');
     
                     // add general information
-                    repCard.append('tr')
-                        .append('th').text(`General:`);
-                    repCard.append('tr').text(`Date of Birth: ${value[2]}`)
-                        .append('tr').text(`Party: ${value[3]}`)
-                        .append('tr').text(`State: ${value[4]}`)
-                        .append('tr').text(`District: ${value[5]}`)
-                        .append('tr').text(`Seniority: ${value[6]}`)
-                        .append('tr').text(`Next Election Year: ${value[7]}`);
+                    repCard.append('h5').text(`General:`);
+                    repCard.append('p').text(`Date of Birth: ${value[2]}`)
+                        .append('p').text(`Party: ${value[3]}`)
+                        .append('p').text(`State: ${value[4]}`)
+                        .append('p').text(`District: ${value[5]}`)
+                        .append('p').text(`Seniority: ${value[6]}`)
+                        .append('p').text(`Next Election Year: ${value[7]}`)
+                        .append('hr');
     
                     // add voting history
-                    repCard.append('tr')
-                        .append('th').text(`Voting History:`);
-                    repCard.append('tr').text(`Total Votes: ${value[8]}`)
-                        .append('tr').text(`Missed Votes: ${value[9]}`)
-                        .append('tr').text(`Percentage of Missed Votes: ${value[10]}%`)
-                        .append('tr').text(`Votes With Party: ${value[11]}%`)
-                        .append('tr').text(`Votes Against Party: ${value[12]}%`);
+                    repCard.append('h5').text(`Voting History:`);
+                    repCard.append('p').text(`Total Votes: ${value[8]}`)
+                        .append('p').text(`Missed Votes: ${value[9]}`)
+                        .append('p').text(`Percentage of Missed Votes: ${value[10]}%`)
+                        .append('p').text(`Votes With Party: ${value[11]}%`)
+                        .append('p').text(`Votes Against Party: ${value[12]}%`)
+                        .append('hr');
     
                     // add contact information
-                    repCard.append('tr')
-                        .append('th').text(`Social:`);
-                    repCard.append('tr').text(`Office: ${value[13]}`)
-                        .append('tr').text(`Ohone Number: ${value[14]}`);
+                    repCard.append('h5').text(`Social:`);
+                    repCard.append('p').text(`Office: ${value[13]}`)
+                        .append('p').text(`Phone Number: ${value[14]}`);
                         if (value[15] !== 'Website: Not Reported') {
-                            repCard.append('tr').text(`Website: `)
+                            repCard.append('p').text(`Website: `)
                                 .append('a').attr('href',`${value[15]}`).attr('target','_blank').text(`${value[15]}`);
                         }
                         else {
-                            repCard.append('tr').text(`${value[15]}`)
+                            repCard.append('p').text(`${value[15]}`)
                         };
                         if (facebookAccount !== 'Facebook: Not Reported') {
-                            repCard.append('tr').text(`Facebook: `)
+                            repCard.append('p').text(`Facebook: `)
                                 .append('a').attr('href',`${value[16]}`).attr('target','_blank').text(`${value[16]}`);
                         }
                         else {
-                            repCard.append('tr').text(`${value[16]}`)
+                            repCard.append('p').text(`${value[16]}`)
                         };
                         if (value[17] !== 'Twitter: Not Reported') {
-                            repCard.append('tr').text(`Twitter: `)
+                            repCard.append('p').text(`Twitter: `)
                                 .append('a').attr('href',`${value[17]}`).attr('target','_blank').text(`${value[17]}`);
                         }
                         else {
-                            repCard.append('tr').text(`${value[17]}`)
+                            repCard.append('p').text(`${value[17]}`)
                         };
                         if (value[18] !== 'YouTube: Not Reported') {
-                            repCard.append('tr').text(`YouTube: `)
+                            repCard.append('p').text(`YouTube: `)
                                 .append('a').attr('href',`${value[18]}`).attr('target','_blank').text(`${value[18]}`);
                         }
                         else {
-                            repCard.append('tr').text(`${value[18]}`)
+                            repCard.append('p').text(`${value[18]}`)
                         };
                 });
             };

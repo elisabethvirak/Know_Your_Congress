@@ -16,11 +16,11 @@ body {
 }
 
 a {
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 a:hover {
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 br {
@@ -71,7 +71,7 @@ h4 {
 h5 {
     color: white;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 35px;
 }
 
@@ -94,10 +94,10 @@ th {
     color: rgb(23, 36, 78);
 }
 
-tr {
+p {
     font-size: 14px;
     line-height: 28px;
-    color: rgb(23, 36, 78);
+    color: white;
 }
 
 /* -------------------------------Classes------------------------------ */
@@ -189,13 +189,35 @@ tr {
     max-width: 100%;
     margin: auto;
     padding: 20px;
-    background: rgb(23, 36, 78, 0.9);
+    background: rgba(23, 36, 78, 0.9);
 }
 
 .map_box_container {
     position: absolute;
     height: 100% !important;
     width: 100% !important;
+}
+
+.navbar {
+    background-color: rgba(245, 245, 245,0.7);
+}
+
+.navbar h3{
+    color: rgba(23, 36, 78, 0.9);
+    font-family: 'IM Fell English';
+}
+
+.nav-item a {
+    font-size: 25px;
+    font-family: 'Teko', sans-serif;
+    color: rgba(23, 36, 78, 0.9);
+}
+
+.navbar:hover {
+    background-color: none;
+    border: rgba(23, 36, 78, 0.9;
+    color: rgba(23, 36, 78, 0.9);
+
 }
 
 .row-header {
