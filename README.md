@@ -1,13 +1,57 @@
 # Know Your Congress
 
-## Know your congressperson, Know your congress, Know the votes
+## Know how they vote, when they vote, if they vote
 
-Elisabeth, Brooke, Tyler, and JackieOur team was interested in the congresspeople that represent each of us, and in helping Americans get to know their congressperson and who they are.
-We want to make this data exciting and easily accessible through an interactive dashboard.  We will use data from https://projects.propublica.org/api-docs/congress-api/
-This includes all the data we will use in our dashboard.
+Our team was interested in the congresspeople that represent each of us. We want to make this data exciting and easily accessible through an interactive dashboard.
 
->Know your Congress: See information on the 115th congress and their makeup: male to female ratio, length of time in congress, or how often votes are missed.
+To accomplish this we used the ProPublica Congress API. We queried the API with Python requests and json libraries then used PyMongo to upload the JSON responses to a Mongo database. We served the Flask API routes from the database collections. 
 
->Know your Congressperson: Hover over your hometown and see who represents you and links to their website, social media, and information on them- how long they’ve been in congress, bills they’ve sponsored, and how they voted- against and with their party, or not at all.
+The dashboard includes member demographics populated by a dropdown menu using D3.js, a D3.js scatterchart with aggregated data about all congressmembers, a Plotly bar chart displaying a breakdown of how political parties have voted on recent bills, and a mapbox map of congressional districts.
 
->Know the votes:  Choose a bill from a dropdown and see demographic information on who voted for the bill, who sponsored it, and who skipped the vote.
+The following tools were used:
+
+Python:
+  - flask
+  - PyMongo
+  - requests
+  - json
+  - geopandas
+
+Javascript:
+  - dijit
+  - D3
+  - D3 tip 
+  - mapbox gl
+
+HTML/CSS:
+  - Bootstrap
+
+MongoDB
+
+## INSTRUCTIONS FOR USE
+
+Python Depedencies:
+  - flask
+  - pymongo
+  - requests
+  - json
+  - geopandas
+
+Files to include in .gitignore:
+  - config.py
+  - cd_116.geojson
+  - \_\_pycache_\_
+
+Files needed:
+  - config.py in the same directoy as app.py with ProPublica Congress API key as a variable named "congress_key" (get here: https://projects.propublica.org/api-docs/congress-api/)
+
+To run the flask app simply run the app.py script in the app directory.
+
+The mongo database is hosted using Mongo Atlas. If you would like a local copy of the database run the buildDB.py script in the main directory.
+
+#### CREDIT TO:
+ProPublica for the API: https://projects.propublica.org/api-docs/congress-api/
+
+unitedstates GitHub for Congressmembers photos: https://github.com/unitedstates/images/tree/gh-pages/congress/225x275
+
+Data.gov for congressional districts shapefile: https://catalog.data.gov/dataset/tiger-line-shapefile-2018-nation-u-s-116th-congressional-district-national

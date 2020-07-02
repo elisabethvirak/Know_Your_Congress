@@ -1,24 +1,23 @@
 # import libraries
-from flask import Flask, render_template, redirect, jsonify
+from flask import Flask, render_template, jsonify
 import pymongo
 import requests
 import json
-from config import key
+
 
 app = Flask(__name__)
 
 # setup mongo connection
-conn = "mongodb://localhost:27017"
-client = pymongo.MongoClient(conn)
+MONGODB_URI = "mongodb+srv://heroku_user:heroku_user@cluster0-anhwr.mongodb.net/congress_db?retryWrites=true&w=majority"
+client = pymongo.MongoClient(MONGODB_URI)
 
 @app.route("/")
 def index():
-    db = client.congress_db
-    return render_template('index.html', db=db)
+    return render_template('index.html')
 
-@app.route("/members")
+@app.route("/members", methods=['GET'])
 def get_members():
-    db = client.congress_db #connect to database
+    db = client.get_database('congress_db') #connect to database
     members_data = db.members.find() #get members collection data
 
     response = [] #initialize list of data to jsonify
@@ -28,9 +27,9 @@ def get_members():
     
     return jsonify(response) #display API
 
-@app.route("/votes")
+@app.route("/votes", methods=['GET'])
 def get_votes():
-    db = client.congress_db #connect to database
+    db = client.get_database('congress_db') #connect to database
     votes_data = db.votes.find() #get votes collection data
     
     response = [] #initialize list of data to jsonify
