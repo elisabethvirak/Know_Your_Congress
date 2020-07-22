@@ -2,6 +2,8 @@
 
 ## Know how they vote, when they vote, if they vote
 
+![](https://physicsworld.com/wp-content/uploads/2018/11/Washington-DC-Capitol-building-109755791-Shutterstock_orhan-cam-635x421.jpg)
+
 Our team was interested in the congresspeople that represent each of us. We want to make this data exciting and easily accessible through an interactive dashboard.
 
 To accomplish this we used the ProPublica Congress API. We queried the API with Python requests and json libraries then used PyMongo to upload the JSON responses to a Mongo database. We served the Flask API routes from the database collections. 
