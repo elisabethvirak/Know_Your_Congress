@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # setup mongo connection
 MONGODB_URI = "mongodb+srv://heroku_user:heroku_user@cluster0-anhwr.mongodb.net/congress_db?retryWrites=true&w=majority"
-client = pymongo.MongoClient(MONGODB_URI)
+# client = pymongo.MongoClient(MONGODB_URI)
 
 @app.route("/")
 def index():
