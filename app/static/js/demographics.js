@@ -31,15 +31,82 @@ function init() {
                 i.district,])
             // console.log(repNameList);
 
+            // ---------------------------------------------------------------------
+            // create state list
+            // var stateList = [
+            //     ['Arizona', 'AZ'],
+            //     ['Alabama', 'AL'],
+            //     ['Alaska', 'AK'],
+            //     ['Arkansas', 'AR'],
+            //     ['California', 'CA'],
+            //     ['Colorado', 'CO'],
+            //     ['Connecticut', 'CT'],
+            //     ['Delaware', 'DE'],
+            //     ['Florida', 'FL'],
+            //     ['Georgia', 'GA'],
+            //     ['Hawaii', 'HI'],
+            //     ['Idaho', 'ID'],
+            //     ['Illinois', 'IL'],
+            //     ['Indiana', 'IN'],
+            //     ['Iowa', 'IA'],
+            //     ['Kansas', 'KS'],
+            //     ['Kentucky', 'KY'],
+            //     ['Louisiana', 'LA'],
+            //     ['Maine', 'ME'],
+            //     ['Maryland', 'MD'],
+            //     ['Massachusetts', 'MA'],
+            //     ['Michigan', 'MI'],
+            //     ['Minnesota', 'MN'],
+            //     ['Mississippi', 'MS'],
+            //     ['Missouri', 'MO'],
+            //     ['Montana', 'MT'],
+            //     ['Nebraska', 'NE'],
+            //     ['Nevada', 'NV'],
+            //     ['New Hampshire', 'NH'],
+            //     ['New Jersey', 'NJ'],
+            //     ['New Mexico', 'NM'],
+            //     ['New York', 'NY'],
+            //     ['North Carolina', 'NC'],
+            //     ['North Dakota', 'ND'],
+            //     ['Ohio', 'OH'],
+            //     ['Oklahoma', 'OK'],
+            //     ['Oregon', 'OR'],
+            //     ['Pennsylvania', 'PA'],
+            //     ['Rhode Island', 'RI'],
+            //     ['South Carolina', 'SC'],
+            //     ['South Dakota', 'SD'],
+            //     ['Tennessee', 'TN'],
+            //     ['Texas', 'TX'],
+            //     ['Utah', 'UT'],
+            //     ['Vermont', 'VT'],
+            //     ['Virginia', 'VA'],
+            //     ['Washington', 'WA'],
+            //     ['West Virginia', 'WV'],
+            //     ['Wisconsin', 'WI'],
+            //     ['Wyoming', 'WY'],
+            // ];
+            // ---------------------------------------------------------------------
+
+
             // select dropdown menu
-            var dropdownMenu = d3.select('#congressPerson');
+            var dropdownMenu1 = d3.select('#congressPerson');
+            var dropdownMenu2 = d3.select('#state');
             //iterate through representative names list to add choices to the dropdown menu
             repNameList.forEach(name => {
                 // console.log(name[0]);
-                var menuOption = dropdownMenu.append('option');
-                menuOption.attr('value', name[0]);
-                menuOption.text(name[1] + `, ` + name[2] + `, District: ` + name[3]);
+                var repOption = dropdownMenu1.append('option');
+                repOption.attr('value', name[0]);
+                repOption.text(name[2] + `, District: ` + name[3] + ` | ` + name[1]);
             });
+
+            // ---------------------------------------------------------------------
+            // stateList.forEach(state => {
+            //     console.log(state[0]);
+            //     // var stateOption = dropdownMenu2.append('option');
+            //     // stateOption.attr('value',stateList[1]);
+            //     // stateOption.text(stateList[0]);
+            // })
+            // ---------------------------------------------------------------------
         })
         buildRepCard(memberData[0].id);
         addPicture(memberData[0].id);

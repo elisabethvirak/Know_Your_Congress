@@ -1,7 +1,7 @@
 import requests
 import pymongo
 import json
-from app.config import congress_key
+from config import congress_key
 
 def build_mongo_db ():
     MONGODB_URI = 'mongodb+srv://heroku_user:heroku_user@cluster0-anhwr.mongodb.net/test' # Create connection variable

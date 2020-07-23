@@ -112,8 +112,10 @@ function buildPlot() {
                     title: "Number of Votes"
 
                 },
-                width: 700,
-                height: 700
+                autosize=True,
+                automargin=True,
+                // width: 700,
+                // height: 700
             }
   
             Plotly.newPlot("diverging-chart", allData, layout);
