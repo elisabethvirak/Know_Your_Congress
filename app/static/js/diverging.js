@@ -106,16 +106,17 @@ function buildPlot() {
                 hoverlabel: { bgcolor: "#FFF" },                   
                 xaxis: {
                     tickangle: -45,
-                    title: "Bill ID"
+                    title: "Bill ID",
+                    // autosize=True,
                 },
                 yaxis: {
-                    title: "Number of Votes"
-
+                title: "Number of Votes",
+                    // autosize=True
                 },
-                autosize=True,
-                automargin=True,
-                // width: 700,
-                // height: 700
+                // autosize=True,
+                // automargin=True
+                width: 700,
+                height: 700
             }
   
             Plotly.newPlot("diverging-chart", allData, layout);
