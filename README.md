@@ -38,6 +38,7 @@ Python Depedencies:
   - requests
   - json
   - geopandas
+  - dnspython
 
 Files to include in .gitignore:
   - config.py
