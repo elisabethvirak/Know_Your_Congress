@@ -1,8 +1,230 @@
 function init() {
+    //create state dropdown menu option
+    var dropdownMenu2 = d3.select('#state');
+    // create state list
+    var stateList = [
+        {
+            "name": "Alabama",
+            "abbreviation": "AL"
+        },
+        {
+            "name": "Alaska",
+            "abbreviation": "AK"
+        },
+        {
+            "name": "Arizona",
+            "abbreviation": "AZ"
+        },
+        {
+            "name": "Arkansas",
+            "abbreviation": "AR"
+        },
+        {
+            "name": "California",
+            "abbreviation": "CA"
+        },
+        {
+            "name": "Colorado",
+            "abbreviation": "CO"
+        },
+        {
+            "name": "Connecticut",
+            "abbreviation": "CT"
+        },
+        {
+            "name": "Delaware",
+            "abbreviation": "DE"
+        },
+        {
+            "name": "District Of Columbia",
+            "abbreviation": "DC"
+        },
+        {
+            "name": "Florida",
+            "abbreviation": "FL"
+        },
+        {
+            "name": "Georgia",
+            "abbreviation": "GA"
+        },
+        {
+            "name": "Hawaii",
+            "abbreviation": "HI"
+        },
+        {
+            "name": "Idaho",
+            "abbreviation": "ID"
+        },
+        {
+            "name": "Illinois",
+            "abbreviation": "IL"
+        },
+        {
+            "name": "Indiana",
+            "abbreviation": "IN"
+        },
+        {
+            "name": "Iowa",
+            "abbreviation": "IA"
+        },
+        {
+            "name": "Kansas",
+            "abbreviation": "KS"
+        },
+        {
+            "name": "Kentucky",
+            "abbreviation": "KY"
+        },
+        {
+            "name": "Louisiana",
+            "abbreviation": "LA"
+        },
+        {
+            "name": "Maine",
+            "abbreviation": "ME"
+        },
+        {
+            "name": "Maryland",
+            "abbreviation": "MD"
+        },
+        {
+            "name": "Massachusetts",
+            "abbreviation": "MA"
+        },
+        {
+            "name": "Michigan",
+            "abbreviation": "MI"
+        },
+        {
+            "name": "Minnesota",
+            "abbreviation": "MN"
+        },
+        {
+            "name": "Mississippi",
+            "abbreviation": "MS"
+        },
+        {
+            "name": "Missouri",
+            "abbreviation": "MO"
+        },
+        {
+            "name": "Montana",
+            "abbreviation": "MT"
+        },
+        {
+            "name": "Nebraska",
+            "abbreviation": "NE"
+        },
+        {
+            "name": "Nevada",
+            "abbreviation": "NV"
+        },
+        {
+            "name": "New Hampshire",
+            "abbreviation": "NH"
+        },
+        {
+            "name": "New Jersey",
+            "abbreviation": "NJ"
+        },
+        {
+            "name": "New Mexico",
+            "abbreviation": "NM"
+        },
+        {
+            "name": "New York",
+            "abbreviation": "NY"
+        },
+        {
+            "name": "North Carolina",
+            "abbreviation": "NC"
+        },
+        {
+            "name": "North Dakota",
+            "abbreviation": "ND"
+        },
+        {
+            "name": "Ohio",
+            "abbreviation": "OH"
+        },
+        {
+            "name": "Oklahoma",
+            "abbreviation": "OK"
+        },
+        {
+            "name": "Oregon",
+            "abbreviation": "OR"
+        },
+        {
+            "name": "Pennsylvania",
+            "abbreviation": "PA"
+        },
+        {
+            "name": "Rhode Island",
+            "abbreviation": "RI"
+        },
+        {
+            "name": "South Carolina",
+            "abbreviation": "SC"
+        },
+        {
+            "name": "South Dakota",
+            "abbreviation": "SD"
+        },
+        {
+            "name": "Tennessee",
+            "abbreviation": "TN"
+        },
+        {
+            "name": "Texas",
+            "abbreviation": "TX"
+        },
+        {
+            "name": "Utah",
+            "abbreviation": "UT"
+        },
+        {
+            "name": "Vermont",
+            "abbreviation": "VT"
+        },
+        {
+            "name": "Virginia",
+            "abbreviation": "VA"
+        },
+        {
+            "name": "Washington",
+            "abbreviation": "WA"
+        },
+        {
+            "name": "West Virginia",
+            "abbreviation": "WV"
+        },
+        {
+            "name": "Wisconsin",
+            "abbreviation": "WI"
+        },
+        {
+            "name": "Wyoming",
+            "abbreviation": "WY"
+        }
+    ]
+    // console.log(stateList[0].name);
+
+    // ---------------------------------------------------------------------
+    stateList.forEach(state => {
+        // console.log(state);
+        var stateOption = dropdownMenu2.append('option');
+        stateOption.attr('value',state.abbreviation);
+        stateOption.text(state.name);
+    })
+    // ---------------------------------------------------------------------
+    // ---------------------------------------------------------------------
+
+    // create member selection dropdown option
     d3.json("/members").then(memberData => {
         // sanity check
         // console.log(memberData);
-        
+
         memberData.forEach(i => {
             // sanity check
             // console.log(i);
@@ -31,66 +253,8 @@ function init() {
                 i.district,])
             // console.log(repNameList);
 
-            // ---------------------------------------------------------------------
-            // create state list
-            // var stateList = [
-            //     ['Arizona', 'AZ'],
-            //     ['Alabama', 'AL'],
-            //     ['Alaska', 'AK'],
-            //     ['Arkansas', 'AR'],
-            //     ['California', 'CA'],
-            //     ['Colorado', 'CO'],
-            //     ['Connecticut', 'CT'],
-            //     ['Delaware', 'DE'],
-            //     ['Florida', 'FL'],
-            //     ['Georgia', 'GA'],
-            //     ['Hawaii', 'HI'],
-            //     ['Idaho', 'ID'],
-            //     ['Illinois', 'IL'],
-            //     ['Indiana', 'IN'],
-            //     ['Iowa', 'IA'],
-            //     ['Kansas', 'KS'],
-            //     ['Kentucky', 'KY'],
-            //     ['Louisiana', 'LA'],
-            //     ['Maine', 'ME'],
-            //     ['Maryland', 'MD'],
-            //     ['Massachusetts', 'MA'],
-            //     ['Michigan', 'MI'],
-            //     ['Minnesota', 'MN'],
-            //     ['Mississippi', 'MS'],
-            //     ['Missouri', 'MO'],
-            //     ['Montana', 'MT'],
-            //     ['Nebraska', 'NE'],
-            //     ['Nevada', 'NV'],
-            //     ['New Hampshire', 'NH'],
-            //     ['New Jersey', 'NJ'],
-            //     ['New Mexico', 'NM'],
-            //     ['New York', 'NY'],
-            //     ['North Carolina', 'NC'],
-            //     ['North Dakota', 'ND'],
-            //     ['Ohio', 'OH'],
-            //     ['Oklahoma', 'OK'],
-            //     ['Oregon', 'OR'],
-            //     ['Pennsylvania', 'PA'],
-            //     ['Rhode Island', 'RI'],
-            //     ['South Carolina', 'SC'],
-            //     ['South Dakota', 'SD'],
-            //     ['Tennessee', 'TN'],
-            //     ['Texas', 'TX'],
-            //     ['Utah', 'UT'],
-            //     ['Vermont', 'VT'],
-            //     ['Virginia', 'VA'],
-            //     ['Washington', 'WA'],
-            //     ['West Virginia', 'WV'],
-            //     ['Wisconsin', 'WI'],
-            //     ['Wyoming', 'WY'],
-            // ];
-            // ---------------------------------------------------------------------
-
-
             // select dropdown menu
             var dropdownMenu1 = d3.select('#congressPerson');
-            var dropdownMenu2 = d3.select('#state');
             //iterate through representative names list to add choices to the dropdown menu
             repNameList.forEach(name => {
                 // console.log(name[0]);
@@ -98,15 +262,6 @@ function init() {
                 repOption.attr('value', name[0]);
                 repOption.text(name[2] + `, District: ` + name[3] + ` | ` + name[1]);
             });
-
-            // ---------------------------------------------------------------------
-            // stateList.forEach(state => {
-            //     console.log(state[0]);
-            //     // var stateOption = dropdownMenu2.append('option');
-            //     // stateOption.attr('value',stateList[1]);
-            //     // stateOption.text(stateList[0]);
-            // })
-            // ---------------------------------------------------------------------
         })
         buildRepCard(memberData[0].id);
         addPicture(memberData[0].id);
