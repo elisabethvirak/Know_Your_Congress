@@ -11,7 +11,7 @@ def build_mongo_db ():
     db = client.congress_db  # create/connect to db
 
     #open geojson file created in convertGeoJSON script
-    geojson_path = r"geo_data/cd_116.geojson"
+    geojson_path = r"../Know_Your_Congress_extras/map/cd_116.geojson"
     with open(geojson_path) as f:
         geodata = geojson.load(f)
     
