@@ -117,6 +117,12 @@ d3.json("/members").then(function (memberData) {
     var yAxis = chartGroup.append("g")
         .classed("y-axis", true)
         .call(leftAxis);
+
+    var toolTip = d3.select("#scatter")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("visibility", "hidden");
+
     var scatterPoints = chartGroup.append("g").selectAll("circle")
         .data(memberData)
         .enter()
@@ -127,16 +133,20 @@ d3.json("/members").then(function (memberData) {
         .attr("fill", "#ff0000") //color of points
         .attr("opacity", ".75")
         .on("mouseover", function (d){
-            toolTip.show(d);
+            var tipHTML = d.first_name + " " + d.last_name + " ("+ d.party + ") <br>"+ "Age: " + d.age + "<br> Years in Congress: " + d.seniority  + "<br>  Votes against Party: " + d.votes_against_party_pct + "%" + "<br> Missed Votes: " + d.missed_votes_pct +"%"
+            toolTip
+                .html(tipHTML)
+                .style("visibility", "visible")
+                .transition()
+                .duration(200)
+                .style("opacity", .9)    
         })
-
-    var toolTip = d3.tip()
-        .attr("class", "tooltip")
-        .offset([75, 45])
-        .html(function (d) {
-            return (d.first_name + " " + d.last_name + " ("+ d.party + ") <br>"+ "Age: " + d.age + "<br> Years in Congress: " + d.seniority  + "<br>  Votes against Party: " + d.votes_against_party_pct + "%" + "<br> Missed Votes: " + d.missed_votes_pct +"%" )
+        .on("mouseout", function(d){
+            toolTip
+                .style("opacity", 0)
+                .transition()
+                .duration(300)
         });
-    scatterPoints.call(toolTip);
 
     var labelsGroupX = chartGroup.append("g")
         .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 20})`); //axis position
