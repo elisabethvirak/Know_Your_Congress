@@ -4,12 +4,12 @@ import pymongo
 import requests
 import json
 
-
-app = Flask(__name__, template_folder='templates')
-
 # setup mongo connection
 MONGODB_URI = "mongodb+srv://heroku_user:heroku_user@cluster0-anhwr.mongodb.net/congress_db?retryWrites=true&w=majority"
 client = pymongo.MongoClient(MONGODB_URI)
+
+
+app = Flask(__name__)
 
 @app.route("/")
 def index():
