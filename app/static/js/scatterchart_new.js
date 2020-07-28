@@ -120,8 +120,28 @@ d3.json("/members").then(function (memberData) {
 
     var toolTip = d3.select("#scatter")
         .append("div")
-        .attr("class", "tooltip")
-        .style("visibility", "hidden");
+        .attr("class", "tooltip");
+
+    var mouseover = function(d) {
+        toolTip
+            .style("opacity", 1)
+        d3.select(this)
+            .style("stroke", "black")
+            .style("opacity", 1)
+          };
+    var mousemove = function(d) {
+        toolTip
+            .html(d.first_name + " " + d.last_name + " ("+ d.party + ") <br>"+ "Age: " + d.age + "<br> Years in Congress: " + d.seniority  + "<br>  Votes against Party: " + d.votes_against_party_pct + "%" + "<br> Missed Votes: " + d.missed_votes_pct +"%")
+            .style("right", (d3.mouse(this)[0]) + "px")
+            .style("top", (d3.mouse(this)[1]) + "px")
+          };
+    var mouseleave = function(d) {
+        toolTip
+            .style("opacity", 0)
+        d3.select(this)
+            .style("stroke", "none")
+            .style("opacity", 0.8)
+          };
 
     var scatterPoints = chartGroup.append("g").selectAll("circle")
         .data(memberData)
@@ -132,21 +152,9 @@ d3.json("/members").then(function (memberData) {
         .attr("r", 5) //size of points
         .attr("fill", "#ff0000") //color of points
         .attr("opacity", ".75")
-        .on("mouseover", function (d){
-            var tipHTML = d.first_name + " " + d.last_name + " ("+ d.party + ") <br>"+ "Age: " + d.age + "<br> Years in Congress: " + d.seniority  + "<br>  Votes against Party: " + d.votes_against_party_pct + "%" + "<br> Missed Votes: " + d.missed_votes_pct +"%"
-            toolTip
-                .html(tipHTML)
-                .style("visibility", "visible")
-                .transition()
-                .duration(200)
-                .style("opacity", .9)    
-        })
-        .on("mouseout", function(d){
-            toolTip
-                .style("opacity", 0)
-                .transition()
-                .duration(300)
-        });
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseout", mouseleave);
 
     var labelsGroupX = chartGroup.append("g")
         .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 20})`); //axis position
