@@ -1,4 +1,5 @@
 d3.json("/votes").then(function (votesData){
+
     votesData.forEach(function(d){
         var billID = d.bill.bill_id
         // console.log(billID)

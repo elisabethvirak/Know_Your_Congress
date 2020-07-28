@@ -10,28 +10,29 @@ function buildPlot() {
         var independentNo = []
         var republicanYes = []
         var republicanNo = []
-        //var billTitle = []
 
     // Parse Data/Cast as numbers
         votesData.forEach(function(data) {
-            bill.push(data.bill.bill_id);            
+            nextBill = data.bill.bill_id
+            //console.log(nextBill)
+            if (bill.includes(nextBill) == false) {
+            bill.push(data.bill.bill_id);
             democraticYes.push(data.democratic.yes);            
             democraticNo.push(data.democratic.no);            
             independentYes.push(data.independent.yes);                
             independentNo.push(data.independent.no);                
             republicanYes.push(data.republican.yes);                
-            republicanNo.push(data.republican.no);
-            //billTitle.push(data.bill.title)
+            republicanNo.push(data.republican.no)
+            };
             
         });
 
-        // console.log(bill);
-        // console.log(democraticYes);
-        // console.log(democraticNo);
-        // console.log(independentYes);
-        // console.log(republicanYes);
-        // console.log(republicanNo);
-        //console.log(billTitle);
+        //console.log(bill);
+        //console.log(democraticYes);
+        //console.log(democraticNo);
+        //console.log(independentYes);
+        //console.log(republicanYes);
+        //console.log(republicanNo);
 
             var trace1= {
                 x: bill,
