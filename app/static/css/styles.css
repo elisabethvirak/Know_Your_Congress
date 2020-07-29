@@ -260,7 +260,6 @@ p {
     display: inline;
 }
 
-
 #page-title {
     border-bottom: 1px solid black;
     font-family: Cambria;
@@ -279,7 +278,9 @@ p {
     color: royalblue;
 }
 
-
+.plotTitle {
+    padding-top: 25px;
+}
 #scatter {
     border-radius: 10px;
     max-height: 800px;
