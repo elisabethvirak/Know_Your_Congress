@@ -46,30 +46,30 @@
         </div>
     </nav>
     <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-        <div class="container-fluid">
-            <div class="jumbotron text-center">
-                <h1>Know Your Congress</h1>
-                <h2>Know How They Vote, When They Vote, If They Vote</h2>
-                <p>
-                    <a class="btn btn-primary btn-lg" href="/members" role="button">Members Data</a>
-                    <a class="btn btn-primary btn-lg" href="/votes" role="button">Votes Data</a>
-                </p>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class='container align-items-center'>
-                <div class='row'>
-                    <div class='col-md-12'>
-                        <div class='box'>
-                            <h4>Find Your Congressperson</h4>
-                            <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
-
-                            <!-- ------ -->
-                            <h4>Or Choose Your State</h4>
-                            <select id="state" onchange="stateOptionChanged(this.value)"></select>
-                            <select id="stateSelectRep" onchange="repOptionChanged(this.value)"></select>
-                            <!-- ------ -->
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Know Your Congress</h1>
+            <h2>Know How They Vote, When They Vote, If They Vote</h2>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/members" role="button">Members Data</a>
+                <a class="btn btn-primary btn-lg" href="/votes" role="button">Votes Data</a>
+            </p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class='container align-items-center'>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class='box'>
+                        <h4>Find Your Congressperson</h4>
+                        <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
+                        
+                        <!-- ------ -->
+                        <h4>Or Choose Your State</h4>
+                        <select id="state" onchange="stateOptionChanged(this.value)"></select>
+                        <select id="stateSelectRep" onchange="repOptionChanged(this.value)"></select>
+                        <!-- ------ -->
 
                             <div class="card-header">
                                 <h3 class="card-title">About Your Representative</h3>
