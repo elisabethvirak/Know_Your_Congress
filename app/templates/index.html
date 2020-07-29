@@ -20,7 +20,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#mainNav">
     <nav class="navbar sticky-top navbar-expand-md mb-2">
         <a href="#" class="navbar-brand">
             <h3 class="mb-0">Know Your Congress</h3>
@@ -45,7 +45,6 @@
             </ul>
         </div>
     </nav>
-    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
     <div class="container-fluid">
         <div class="jumbotron text-center">
             <h1>Know Your Congress</h1>
@@ -70,6 +69,7 @@
                         <select id="state" onchange="stateOptionChanged(this.value)"></select>
                         <select id="stateSelectRep" onchange="repOptionChanged(this.value)"></select>
                         <!-- ------ -->
+                        <h5>Don't know your district? <a href="#map"><h5>Find out here.</h5></a></h5>
 
                             <div class="card-header">
                                 <h3 class="card-title">About Your Representative</h3>

@@ -5,6 +5,7 @@ html {
 }
 
 body {
+    position: relative;
     font-family: arial;
     background-image: url('https://images.unsplash.com/photo-1519674921880-e784bc34ebd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80');
     /*photo from Jacob Wall @jacobwall_ on Unsplash*/
@@ -101,6 +102,10 @@ p {
 }
 
 /* -------------------------------Classes------------------------------ */
+.active {
+    color: royalblue;
+}
+
 .active-axis {
     font-weight: bold;
     fill: white;
@@ -205,6 +210,11 @@ p {
     font-size: 25px;
     font-family: 'Teko', sans-serif;
     color: rgba(23, 36, 78, 0.9);
+}
+
+.navbar-toggler-icon {
+    background-color: rgba(23, 36, 78, 0.6);
+    border: rgba(23, 36, 78, 0.9);
 }
 
 .navbar:hover {
