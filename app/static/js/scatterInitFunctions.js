@@ -84,12 +84,15 @@ function calculate_age(dob) {
 //create div tag to hold tool tips
 var toolTip = d3.select("#scatter")
 .append("div")
-.attr("class", "tooltip");
+.attr("class", "tooltip")
+.style("opacity", 0);
 
 //make tool tip div visible
 var mouseover = function(d) {
     toolTip
         .style("opacity", 1)
+        .style("left", "900px")
+        .style("top", "75px")
     //highlight circle mouse is on with a black border
     d3.select(this)
         .style("stroke", "black")
@@ -100,8 +103,8 @@ var mouseover = function(d) {
 var mousemove = function(d) {
     toolTip
         .html(d.first_name + " " + d.last_name + " ("+ d.party + ") <br>"+ "Age: " + d.age + "<br> Years in Congress: " + d.seniority  + "<br>  Votes against Party: " + d.votes_against_party_pct + "%" + "<br> Missed Votes: " + d.missed_votes_pct +"%")
-        .style("left", d3.mouse(this)[0])
-        .style("top", d3.mouse(this)[1])
+        .style("left", "900px")
+        .style("top", "100px")
   };
 
 //make div tag invisible upon mouse out
