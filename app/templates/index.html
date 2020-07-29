@@ -31,13 +31,13 @@
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#congressPerson" class="nav-link active">Meet Your Representative</a>
+                    <a href="#congressCard" class="nav-link active">Meet Your Representative</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#scatter" class="nav-link">See Their Activity</a>
+                    <a href="#scatterPlot" class="nav-link">See Their Activity</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#diverging-chart" class="nav-link">About Your Bills</a>
+                    <a href="#billBox" class="nav-link">About Your Bills</a>
                 </li>
                 <li class="nav-item">
                     <a href="#map" class="nav-link">Find Your District</a>
@@ -46,30 +46,30 @@
         </div>
     </nav>
     <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-        <div class="container-fluid">
-            <div class="jumbotron text-center">
-                <h1>Know Your Congress</h1>
-                <h2>Know How They Vote, When They Vote, If They Vote</h2>
-                <p>
-                    <a class="btn btn-primary btn-lg" href="/members" role="button">Members Data</a>
-                    <a class="btn btn-primary btn-lg" href="/votes" role="button">Votes Data</a>
-                </p>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class='container align-items-center'>
-                <div class='row'>
-                    <div class='col-md-12'>
-                        <div class='box'>
-                            <h4>Find Your Congressperson</h4>
-                            <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
-
-                            <!-- ------ -->
-                            <h4>Or Choose Your State</h4>
-                            <select id="state" onchange="stateOptionChanged(this.value)"></select>
-                            <select id="stateSelectRep" onchange="repOptionChanged(this.value)"></select>
-                            <!-- ------ -->
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Know Your Congress</h1>
+            <h2>Know How They Vote, When They Vote, If They Vote</h2>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/members" role="button">Members Data</a>
+                <a class="btn btn-primary btn-lg" href="/votes" role="button">Votes Data</a>
+            </p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class='container align-items-center'>
+            <div class='row' id="congressCard">
+                <div class='col-md-12'>
+                    <div class='box'>
+                        <h4>Find Your Congressperson</h4>
+                        <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
+                        
+                        <!-- ------ -->
+                        <h4>Or Choose Your State</h4>
+                        <select id="state" onchange="stateOptionChanged(this.value)"></select>
+                        <select id="stateSelectRep" onchange="repOptionChanged(this.value)"></select>
+                        <!-- ------ -->
 
                             <div class="card-header">
                                 <h3 class="card-title">About Your Representative</h3>
@@ -86,7 +86,7 @@
                 <br>
                 <br>
                 <br>
-                <div class='row'>
+                <div class='row' id ="scatterPlot">
                     <div class='col-md-12 box'>
                         <p> Choose an axis to explore. Hover over each point to see a specific Congressmember. </p>
                         <h3 class='plotTitle'></h3>
@@ -97,7 +97,7 @@
                 <br>
                 <br>
                 <br>
-                <div class='container box'>
+                <div class='container box' id="billBox">
                     <div class='row'>
                         <div class='col-md-12'>
                             <h3 class="card-title">About Your Bills</h3>
@@ -105,7 +105,7 @@
                     </div>
                     <div class='row'>
                         <div class='col-md-8' id='diverging-chart'>
-                            <br></br>
+                            <br>
                             <p id = "plotly-description">
                                 The plot displays the last 20 bills voted on by Congress. Only the unique bills are displayed, however the title pane to right will show each of the 20 records. Occasionally the same bill will appear many times as it contains multiple parts.
                             </p>
@@ -122,7 +122,9 @@
             <br>
             <div class='container' id = "map">
                 <div class='row'>
-                    <div class='col-md-12'>
+                    <div class='col-md-12 box'>
+                        <h3 class = 'card-title'>Find Your District</h3>
+                        <p>Zoom down to the street level. Hover over a district to see the Congressmember, their party, and how many years they have served.</p>
                         <!----TABLEAU SHARE CODE---->
                         <div class='tableauPlaceholder' id='viz1595540188200' style='position: relative'><noscript><a
                                     href='#'><img alt=' '
@@ -172,6 +174,7 @@
             crossorigin="anonymous"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+        <script type="text/javascript" src="../static/js/initDemographics.js"></script>
         <script type="text/javascript" src="../static/js/demographics.js"></script>
         <script type="text/javascript" src="../static/js/scatterInitFunctions.js"></script>
         <script type="text/javascript" src="../static/js/buildScatter.js"></script>
