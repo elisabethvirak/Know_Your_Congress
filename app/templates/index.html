@@ -65,11 +65,11 @@
                         <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
                         
                         <!-- ------ -->
-                        <h4>Or Choose Your State</h4>
+                        <h4>Or Choose Your State and District</h4>
                         <select id="state" onchange="stateOptionChanged(this.value)"></select>
                         <select id="stateSelectRep" onchange="repOptionChanged(this.value)"></select>
                         <!-- ------ -->
-                        <h5>Don't know your district? <a href="#map"><h5>Find out here.</h5></a></h5>
+                        <h5>Don't know your district? <a href="#map"><h5 class="findOut">Find out here.</h5></a></h5>
 
                             <div class="card-header">
                                 <h3 class="card-title">About Your Representative</h3>
@@ -102,8 +102,12 @@
                         <div class='col-md-12'>
                             <h3 class="card-title">About Your Bills</h3>
                             <p id = "plotly-description">
-                                The plot displays the last 20 bills voted on by Congress. Only the unique bills are displayed, however the title pane to right will show each of the 20 records. Occasionally the same bill will appear many times as it contains multiple parts.
+                                The plot displays the last 20 bills voted on by Congress. Only unique bills are displayed on the chart. However, the title pane to right will show each of the 20 records. 
                             </p>
+                            <p id = "plotly-description">
+                                The same bill may appear more than once if it contains multiple parts.
+                            </p>
+                            <br>
                         </div>
                     </div>
                     <div class='row'>

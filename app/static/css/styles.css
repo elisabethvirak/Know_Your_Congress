@@ -173,6 +173,11 @@ p {
     color: rgb(23, 36, 78);
 }
 
+.findOut {
+    color:royalblue;
+    font-weight: bold;
+}
+
 .iframeContainer {
     padding: 20px;
     border: 1px solid #E3E3E3;
