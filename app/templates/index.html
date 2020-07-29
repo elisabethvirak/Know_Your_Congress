@@ -31,13 +31,13 @@
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#congressPerson" class="nav-link active">Meet Your Representative</a>
+                    <a href="#congressCard" class="nav-link active">Meet Your Representative</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#scatter" class="nav-link">See Their Activity</a>
+                    <a href="#scatterPlot" class="nav-link">See Their Activity</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#diverging-chart" class="nav-link">About Your Bills</a>
+                    <a href="#billBox" class="nav-link">About Your Bills</a>
                 </li>
                 <li class="nav-item">
                     <a href="#map" class="nav-link">Find Your District</a>
@@ -59,7 +59,7 @@
         <br>
         <br>
         <div class='container align-items-center'>
-            <div class='row'>
+            <div class='row' id="congressCard">
                 <div class='col-md-12'>
                     <div class='box'>
                         <h4>Find Your Congressperson</h4>
@@ -86,7 +86,7 @@
                 <br>
                 <br>
                 <br>
-                <div class='row'>
+                <div class='row' id ="scatterPlot">
                     <div class='col-md-12 box'>
                         <h3 class='plotTitle'></h3>
                         <div id='scatter'>
@@ -96,7 +96,7 @@
                 <br>
                 <br>
                 <br>
-                <div class='container box'>
+                <div class='container box' id="billBox">
                     <div class='row'>
                         <div class='col-md-12'>
                             <h3 class="card-title">About Your Bills</h3>
@@ -167,6 +167,7 @@
             crossorigin="anonymous"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+        <script type="text/javascript" src="../static/js/initDemographics.js"></script>
         <script type="text/javascript" src="../static/js/demographics.js"></script>
         <script type="text/javascript" src="../static/js/scatterInitFunctions.js"></script>
         <script type="text/javascript" src="../static/js/buildScatter.js"></script>
