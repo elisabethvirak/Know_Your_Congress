@@ -192,12 +192,6 @@ p {
     background: rgba(23, 36, 78, 0.9);
 }
 
-.map_box_container {
-    position: absolute;
-    height: 100% !important;
-    width: 100% !important;
-}
-
 .navbar {
     background-color: rgba(245, 245, 245,0.7);
 }

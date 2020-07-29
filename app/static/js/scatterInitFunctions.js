@@ -100,8 +100,8 @@ var mouseover = function(d) {
 var mousemove = function(d) {
     toolTip
         .html(d.first_name + " " + d.last_name + " ("+ d.party + ") <br>"+ "Age: " + d.age + "<br> Years in Congress: " + d.seniority  + "<br>  Votes against Party: " + d.votes_against_party_pct + "%" + "<br> Missed Votes: " + d.missed_votes_pct +"%")
-        .style("right", (d3.mouse(this)[0]) + "px")
-        .style("top", (d3.mouse(this)[1]) + "px")
+        .style("left", d3.mouse(this)[0])
+        .style("top", d3.mouse(this)[1])
   };
 
 //make div tag invisible upon mouse out
