@@ -104,7 +104,7 @@ var mousemove = function(d) {
     toolTip
         .html(d.first_name + " " + d.last_name + " ("+ d.party + ") <br>"+ "Age: " + d.age + "<br> Years in Congress: " + d.seniority  + "<br>  Votes against Party: " + d.votes_against_party_pct + "%" + "<br> Missed Votes: " + d.missed_votes_pct +"%")
         .style("left", "900px")
-        .style("top", "100px")
+        .style("top", "150px")
   };
 
 //make div tag invisible upon mouse out
