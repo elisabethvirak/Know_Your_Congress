@@ -46,37 +46,67 @@
         </div>
     </nav>
     <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-    <div class="container-fluid">
-        <div class="jumbotron text-center">
-            <h1>Know Your Congress</h1>
-            <h2>Know How They Vote, When They Vote, If They Vote</h2>
-            <p>
-                <a class="btn btn-primary btn-lg" href="/members" role="button">Members Data</a>
-                <a class="btn btn-primary btn-lg" href="/votes" role="button">Votes Data</a>
-            </p>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class='container align-items-center'>
-            <div class='row'>
-                <div class='col-md-12'>
-                    <div class='box'>
-                        <h4>Find Your Congressperson</h4>
-                        <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
-                        
-                        <!-- ------ -->
-                        <h4>Or Choose Your State and District</h4>
-                        <select id="state" onchange="stateOptionChanged(this.value)"></select>
-                        <!-- ------ -->
+        <div class="container-fluid">
+            <div class="jumbotron text-center">
+                <h1>Know Your Congress</h1>
+                <h2>Know How They Vote, When They Vote, If They Vote</h2>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/members" role="button">Members Data</a>
+                    <a class="btn btn-primary btn-lg" href="/votes" role="button">Votes Data</a>
+                </p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class='container align-items-center'>
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <div class='box'>
+                            <h4>Find Your Congressperson</h4>
+                            <select id="congressPerson" onchange="repOptionChanged(this.value)"></select>
 
-                        <div class="card-header">
-                            <h3 class="card-title">About Your Representative</h3>
+                            <!-- ------ -->
+                            <h4>Or Choose Your State</h4>
+                            <select id="state" onchange="stateOptionChanged(this.value)"></select>
+                            <select id="stateSelectRep" onchange="repOptionChanged(this.value)"></select>
+                            <!-- ------ -->
+
+                            <div class="card-header">
+                                <h3 class="card-title">About Your Representative</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class='row'>
+                                    <div class='col-md-6' id='rep-pic'></div>
+                                    <div class='col-md-6' id='rep-info'></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class='row'>
-                                <div class='col-md-6' id='rep-pic'></div>
-                                <div class='col-md-6' id='rep-info'></div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class='row'>
+                    <div class='col-md-12 box'>
+                        <h3 class='plotTitle'></h3>
+                        <div id='scatter'>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class='container box'>
+                    <div class='row'>
+                        <div class='col-md-12'>
+                            <h3 class="card-title">About Your Bills</h3>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-8' id='diverging-chart'>
+                        </div>
+                        <div class='col-md-4'>
+                            <div class="card-body " id='bill-card'>
                             </div>
                         </div>
                     </div>
@@ -85,69 +115,67 @@
             <br>
             <br>
             <br>
-            <div class='row'>
-                <div class='col-md-12 box'>
-                    <h3 class='plotTitle'></h3>
-                    <div id='scatter'>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class = 'container box'>
-                <div class = 'row'>
-                    <div class = 'col-md-12'>
-                        <h3 class="card-title">About Your Bills</h3>
-                    </div>
-                </div>
-                <div class = 'row'>
-                    <div class = 'col-md-8' id = 'diverging-chart'>                        
-                    </div>
-                    <div class = 'col-md-4'>
-                        <div class="card-body " id = 'bill-card'>
+            <div class='container' id = "map">
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <!----TABLEAU SHARE CODE---->
+                        <div class='tableauPlaceholder' id='viz1595540188200' style='position: relative'><noscript><a
+                                    href='#'><img alt=' '
+                                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;85&#47;85Z7QBQHZ&#47;1_rss.png'
+                                        style='border: none' /></a></noscript><object class='tableauViz'
+                                style='display:none;'>
+                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                <param name='embed_code_version' value='3' />
+                                <param name='path' value='shared&#47;85Z7QBQHZ' />
+                                <param name='toolbar' value='yes' />
+                                <param name='static_image'
+                                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;85&#47;85Z7QBQHZ&#47;1.png' />
+                                <param name='animate_transition' value='yes' />
+                                <param name='display_static_image' value='yes' />
+                                <param name='display_spinner' value='yes' />
+                                <param name='display_overlay' value='yes' />
+                                <param name='display_count' value='yes' />
+                                <param name='language' value='en' />
+                            </object>
                         </div>
+                        <script type='text/javascript'>
+                            var divElement = document.getElementById('viz1595540188200');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
+                            vizElement.style.width = '100%';
+                            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                            var scriptElement = document.createElement('script');
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                        </script>
+                        <!---END TABLEAU CODE-->
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
         </div>
-        <br>
-        <br>
-        <br>
-        <div class = 'container'>
-            <div class = 'row'>
-                <div class = 'col-md-12'>
-                    <section class="map_box_container">
-                        <!--MAP-->
-                      <div id='map'></div>
-                    </section>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-    <script type="text/javascript" src="../static/js/demographics.js"></script>
-    <script type="text/javascript" src="../static/js/scatterchart_new.js"></script>
-    <script type="text/javascript" src="../static/js/diverging.js"></script>
-    <script type="text/javascript" src="../static/js/config.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
-    <script type="text/javascript" src="../static/js/billCard.js"></script>
-    <script type="text/javascript" src="../static/js/congressDistrictsMap.js"></script>
-    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+        <script type="text/javascript" src="../static/js/demographics.js"></script>
+        <script type="text/javascript" src="../static/js/scatterInitFunctions.js"></script>
+        <script type="text/javascript" src="../static/js/buildScatter.js"></script>
+        <script type="text/javascript" src="../static/js/billPlot.js"></script>
+        <script type="text/javascript" src="../static/js/config.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+        <script type="text/javascript" src="../static/js/billCard.js"></script>
+        <script type="text/javascript" src="../static/js/congressDistrictsMap.js"></script>
+
 
 </body>
 

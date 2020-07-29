@@ -2,6 +2,7 @@ function init() {
     //create state dropdown menu option
     var dropdownMenu2 = d3.select('#state');
     // create state list
+    // state list taken from https://gist.github.com/mshafrir/2646763#file-states_titlecase-json
     var stateList = [
         {
             "name": "Alabama",
@@ -427,6 +428,24 @@ function addPicture(rep) {
 function repOptionChanged(id) {
     buildRepCard(id);
     addPicture(id);
+}
+
+function stateOptionChanged(state) {        
+    var stateSelect = d3.select('#stateSelectRep');
+    // console.log(state);
+    d3.json("/members").then(memberData => {
+
+        memberData.forEach(i => {
+            if (i.state == state) {
+                // console.log(state);
+                var repStateOption = stateSelect.append('option');
+                repStateOption.attr('value',i.id);
+                // repStateOption.attr('onchange',"repOptionChanged(this.value)");
+                repStateOption.text(i.first_name+' '+i.last_name);
+                
+            }
+        });
+    });
 }
 
 init();

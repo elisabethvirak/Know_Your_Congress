@@ -1,5 +1,5 @@
-
-mapboxgl.accessToken = "pk.eyJ1Ijoid2lzZW1hbnR5ciIsImEiOiJja2I5aGlpdGswOWtsMzNvdndwbms4NnptIn0.fkx-pV6ImNfnw53zhd0W9w";
+/*
+mapboxgl.accessToken = MAP_API;
 
 var map = new mapboxgl.Map({
   container: 'map', // HTML container ID
@@ -7,3 +7,4 @@ var map = new mapboxgl.Map({
   center: [-98.555183, 39.809860], // starting position as [lng, lat]
   zoom: 4
 });
+*/
