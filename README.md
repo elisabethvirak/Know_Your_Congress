@@ -8,7 +8,7 @@
 
 Our team was interested in the congresspeople that represent each of us. We want to make this data exciting and easily accessible through an interactive dashboard.
 
-The dashboard includes members' demographic and contact information populated by a dropdown menu using D3.js, a D3.js scatterchart of aggregated data about congressmembers generally with reponsive axes, a Plotly bar chart displaying a breakdown of how political parties have voted on recent bills, and a Tableau map of congressional districts colored by members' years in Congress.
+The dashboard includes members' demographic and contact information selectable by name or district, a D3.js scatterchart of aggregated data about congressmembers generally with responsive axes, a Plotly bar chart displaying recent bills voted on by party breakdown, and a Tableau map of congressional districts colored by members' years in Congress.
 
 To accomplish this we used the ProPublica Congress API. We queried the API with Python and used PyMongo to upload the responses to MongoDB. We served the Flask API routes from the database collections hosted on Mongo Atlas. 
 
@@ -59,7 +59,7 @@ Files needed:
 To run the flask app simply run the app.py script in the app directory.
 
 #### Notes
-The mongo database is hosted using Mongo Atlas. If you would like a copy of the database, run the buildDB.py script in the main directory, adjusting the code for your MongoDB instance. Note that data displayed on the site is dependent on a recent API query. Because members of Congress do not change frequently, the database will only need to be updated after an election. 
+The mongo database is hosted using Mongo Atlas. If you would like a copy of the database, run the buildDB.py script in the main directory, adjusting the code for your MongoDB instance. Note that data displayed on the site is dependent on a recent API query. Because members of Congress do not change frequently, the database will only need to be updated after an election. Bill data for the Plotly chart changes much more frequently.
 
 As it is written in this repository, the database includes Congressmembers budget data. Budget data is not currently used in the project, but if you wish to use it, then the database will need to be updated quarterly.
 
