@@ -8,7 +8,7 @@
 
 Our team was interested in the congresspeople that represent each of us. We want to make this data exciting and easily accessible through an interactive dashboard.
 
-The dashboard includes members' demographic and contact information populated by a dropdown menu using D3.js, a D3.js scatterchart of aggregated data about congressmembers generally with reposive axes, a Plotly bar chart displaying a breakdown of how political parties have voted on recent bills, and a Tableau map of congressional districts colored by members' years in Congress.
+The dashboard includes members' demographic and contact information populated by a dropdown menu using D3.js, a D3.js scatterchart of aggregated data about congressmembers generally with reponsive axes, a Plotly bar chart displaying a breakdown of how political parties have voted on recent bills, and a Tableau map of congressional districts colored by members' years in Congress.
 
 To accomplish this we used the ProPublica Congress API. We queried the API with Python and used PyMongo to upload the responses to MongoDB. We served the Flask API routes from the database collections hosted on Mongo Atlas. 
 
