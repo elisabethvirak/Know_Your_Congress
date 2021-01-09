@@ -65,7 +65,7 @@ As it is written in this repository, the database includes Congressmembers budge
 
 The districts for the Tableau map came from the geoJSON file created by the convertGeoJSON.py script in the geo_data directory. This script is dependent on a zip file located in the same directory. See Credits below to download the most recent congressional districts shapefile.
 
-#### CREDIT TO:
+## CREDIT TO:
 ProPublica for the API: https://projects.propublica.org/api-docs/congress-api/
 
 unitedstates GitHub for Congressmembers photos: https://github.com/unitedstates/images/tree/gh-pages/congress/225x275
