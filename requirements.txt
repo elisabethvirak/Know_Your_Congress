@@ -24,7 +24,7 @@ gmaps==0.9.0
 gunicorn==20.0.4
 idna==2.9
 ipykernel==5.3.0
-ipython==7.15.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 ipywidgets==7.5.1
 itsdangerous==1.1.0
