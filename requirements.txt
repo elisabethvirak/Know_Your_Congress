@@ -40,7 +40,7 @@ mapbox-tilesets==1.0.1.dev0
 mapclassify==2.2.0
 MarkupSafe==1.1.1
 matplotlib==3.2.1
-mistune==0.8.4
+mistune==2.0.3
 munch==2.5.0
 nbconvert==5.6.1
 nbformat==5.0.6
